@@ -33,8 +33,9 @@
 
         <thead>
         <tr>
-            <th>ID</th>
+            <!-- <th>ID</th> -->
             <th>Ingredient</th>
+            <th>Type</th>
             <th>Description</th>
             <th>Calories</th>
             <th>Carbohydrates</th>
@@ -42,13 +43,14 @@
             <th>Protein</th>
             <th>Water</th>
             <th>Cholesterol</th>
-            <th>Type</th>
+
         </tr>
         </thead>
         <tbody>
         <tr th:each="ingredient: ${ingredients}">
-            <td th:text="${ingredient.id}"></td>
+            <!-- <td th:text="${ingredient.id}"></td> -->
             <td th:text="${ingredient.ingr_name}"></td>
+            <td th:text="${ingredient.ingr_type}"></td>
             <td th:text="${ingredient.ingr_desc}"></td>
             <td th:text="${ingredient.calories}"></td>
             <td th:text="${ingredient.carbohydrates}"></td>
@@ -56,7 +58,7 @@
             <td th:text="${ingredient.protein}"></td>
             <td th:text="${ingredient.water}"></td>
             <td th:text="${ingredient.cholesterol}"></td>
-            <td th:text="${ingredient.ingr_type}"></td>
+
 
         </tr>
         </tbody>

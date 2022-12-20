@@ -33,7 +33,7 @@
 
         <thead>
         <tr>
-            <th>ID</th>
+            <!-- <th style="visibility:collapse">ID</th> -->
             <th>Recipe</th>
             <th>Description</th>
             <th>Preparation</th>
@@ -43,7 +43,7 @@
         </thead>
         <tbody>
         <tr th:each="recipe: ${recipe}">
-            <td th:text="${recipe.id}"></td>
+            <!-- <td style="visibility:collapse" th:text="${recipe.id}"></td> -->
             <td th:text="${recipe.recipe_name}"></td>
             <td th:text="${recipe.recipe_desc}"></td>
             <td th:text="${recipe.recipe_prep}"></td>
