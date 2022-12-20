@@ -11,17 +11,28 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Getter
 @Setter
+@Builder
 
 public class Recipe {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "recipe_id")
     private int id;
+    
+    @Column(name = "recipe_name")
+    private String recipeName;
 
-    private String recipe_name;
-    private String recipe_desc;
-    private String recipe_prep;
-    private String cousine_type;
-    private String dish_type;
+    @Column(name = "recipe_desc")
+    private String recipeDescription;
+
+    @Column(name = "recipe_prep")
+    private String recipePreparation;
+
+    @Column(name = "cuisine_type")
+    private String cuisineType;
+
+    @Column(name = "dish_type")
+    private String dishType;
 
 }

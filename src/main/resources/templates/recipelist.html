@@ -37,18 +37,18 @@
             <th>Recipe</th>
             <th>Description</th>
             <th>Preparation</th>
-            <th>Cousine Type</th>
+            <th>Cuisine Type</th>
             <th>Dish Type</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="recipe: ${recipe}">
             <!-- <td style="visibility:collapse" th:text="${recipe.id}"></td> -->
-            <td th:text="${recipe.recipe_name}"></td>
-            <td th:text="${recipe.recipe_desc}"></td>
-            <td th:text="${recipe.recipe_prep}"></td>
-            <td th:text="${recipe.cousine_type}"></td>
-            <td th:text="${recipe.dish_type}"></td>
+            <td th:text="${recipe.recipeName}"></td>
+            <td th:text="${recipe.recipeDescription}"></td>
+            <td th:text="${recipe.recipePreparation}"></td>
+            <td th:text="${recipe.cuisineType}"></td>
+            <td th:text="${recipe.dishType}"></td>
         </tr>
         </tbody>
 

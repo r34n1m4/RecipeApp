@@ -2,12 +2,9 @@ package com.reanima.business.repository.model;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
-@Builder
+
 @Entity
 @Table(name = "ingredients")
 @Data
@@ -15,21 +12,40 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @Getter
 @Setter
+@Builder
+
 
 public class Ingredients {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ingr_id")
     private int id;
-    private String ingr_name;
-    private String ingr_type;
-    private String ingr_desc;
+
+    @Column(name = "ingr_name")
+    private String ingredientName;
+
+    @Column(name = "type")
+    private String ingredientType;
+
+    @Column(name = "ingr_desc")
+    private String ingredientDescription;
+
+    @Column(name = "calories")
     private float calories;
+
+    @Column(name = "carbohydrates")
     private float carbohydrates;
+
+    @Column(name = "fat")
     private float fat;
+
+    @Column(name = "protein")
     private float protein;
+
+    @Column(name = "water")
     private float water;
+
+    @Column(name = "cholesterol")
     private float cholesterol;
-
-
 }

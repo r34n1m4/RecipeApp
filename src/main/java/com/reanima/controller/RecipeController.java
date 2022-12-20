@@ -18,19 +18,19 @@ public class RecipeController {
 
     @Autowired
     private RecipeRepo recipeRepo;
-
+    //html+css view
     @GetMapping({"/recipelist"})
     public ModelAndView getAllRecipes() {
         ModelAndView mav1 = new ModelAndView("recipelist");
         mav1.addObject("recipe", recipeRepo.findAll());
         return mav1;
     }
-
+    //postman request
     @PostMapping("/addrecipe")
     public Recipe addRecipe(@RequestBody Recipe recipe) {
         return recipeRepo.save(recipe);
     }
-
+    //json view
     @GetMapping("/recipes")
     public List<Recipe> getRecipes() {
         return recipeRepo.findAll();

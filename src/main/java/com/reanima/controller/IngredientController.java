@@ -16,19 +16,19 @@ public class IngredientController {
 
     @Autowired
     private IngredientsRepo ingredientsRepo;
-
+    //html+css view
     @GetMapping({"/ingredientlist"})
     public ModelAndView getAllIngredients() {
         ModelAndView mav2 = new ModelAndView("ingredientlist");
         mav2.addObject("ingredients", ingredientsRepo.findAll());
         return mav2;
     }
-
+    //postman request
     @PostMapping("/addingredient")
     public Ingredients addIngredients(@RequestBody Ingredients ingredients) {
         return ingredientsRepo.save(ingredients);
     }
-
+    //json view
     @GetMapping("/ingredients")
     public List<Ingredients> getIngredients() {
         return ingredientsRepo.findAll();
