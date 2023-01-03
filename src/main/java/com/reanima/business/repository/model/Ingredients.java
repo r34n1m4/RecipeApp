@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 
 @Entity
-@Table(name = "ingredients")
+@Table(name = "ingredients_nutrition_1g")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -20,12 +20,12 @@ public class Ingredients {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ingr_id")
-    private int id;
+    private int ingredientId;
 
     @Column(name = "ingr_name")
     private String ingredientName;
 
-    @Column(name = "type")
+    @Column(name = "ingr_type")
     private String ingredientType;
 
     @Column(name = "ingr_desc")
