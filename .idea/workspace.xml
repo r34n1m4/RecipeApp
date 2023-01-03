@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2c200b0a-6a10-494a-a144-03f51d64697f" name="Changes" comment="Recipe CRUD Implementation" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2C9wAWP4uBWTOHIhjG49zjuHApf" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\GitHub\RecipeAppAzureSQL\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\GitHub\RecipeApp\src\main\resources\templates" />
+      <recent name="D:\GitHub\RecipeApp\src\main\resources\templates\ingredients" />
+      <recent name="D:\GitHub\RecipeApp\src\main\resources\templates\recipe" />
+      <recent name="D:\GitHub\RecipeAppAzureSQL\src\main\resources\static" />
+      <recent name="D:\GitHub\RecipeAppAzureSQL\src\main\resources\template" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.RecipeApp">
+    <configuration name="RecipeApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.reanima.RecipeApp" />
+      <module name="RecipeApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.reanima.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RecipeAppAzureSQL" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="AzureSQL.RecipeAppAzureSQL" />
+      <module name="RecipeApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="AzureSQL.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Azure Web App: RecipeApp:RecipeApp" type="com.microsoft.intellij.run.configuration.WebAppConfigurationType" factoryName="Azure Web App">
+      <option name="appServicePlanName" value="" />
+      <option name="appServicePlanResourceGroupName" value="" />
+      <option name="applicationLogLevel" value="Error" />
+      <option name="artifactIdentifier" value="com.reanima:recipeapp:0.0.1-SNAPSHOT" />
+      <option name="azureArtifactType" value="Maven" />
+      <option name="creatingAppServicePlan" value="false" />
+      <option name="creatingNew" value="false" />
+      <option name="creatingResGrp" value="false" />
+      <option name="deployToRoot" value="true" />
+      <option name="deployToSlot" value="false" />
+      <option name="enableApplicationLog" value="false" />
+      <option name="enableDetailedErrorMessage" value="false" />
+      <option name="enableFailedRequestTracing" value="false" />
+      <option name="enableWebServerLogging" value="false" />
+      <option name="newSlotConfigurationSource" />
+      <option name="newSlotName" />
+      <option name="openBrowserAfterDeployment" value="true" />
+      <option name="operatingSystem" value="windows" />
+      <option name="packaging" value="jar" />
+      <option name="pricing" value="" />
+      <option name="projectBase" value="" />
+      <option name="projectType" value="" />
+      <option name="region" value="" />
+      <option name="resourceGroup" value="" />
+      <option name="slotName" />
+      <option name="slotPanelVisible" value="false" />
+      <option name="subscriptionId" value="0ea3a67b-4784-450e-a199-d3eaae1bb1e8" />
+      <option name="targetName" value="" />
+      <option name="targetPath" value="" />
+      <option name="webAppContainer" value="java se" />
+      <option name="webAppId" value="/subscriptions/0ea3a67b-4784-450e-a199-d3eaae1bb1e8/resourceGroups/recipeapp/providers/Microsoft.Web/sites/FoodieCorner" />
+      <option name="webAppJavaVersion" value="11" />
+      <option name="webAppName" value="" />
+      <option name="webServerLogQuota" value="35" />
+      <option name="webServerRetentionPeriod" />
+      <method v="2">
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/pom.xml" goal="package" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.RecipeApp" />
+        <item itemvalue="Application.RecipeAppAzureSQL" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2c200b0a-6a10-494a-a144-03f51d64697f" name="Changes" comment="" />
+      <created>1658227965900</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1658227965900</updated>
+    </task>
+    <task id="LOCAL-00001" summary="v1.0">
+      <created>1658231600950</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1658231600950</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Project refactor">
+      <created>1671562954440</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1671562954440</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Project refactor">
+      <created>1671563895461</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1671563895461</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Wrapping commit: 20.12.2022">
+      <created>1671566548529</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1671566548529</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Recipe CRUD Implementation">
+      <created>1672748417222</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1672748417222</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/RecipeAppAzureSQL" />
+      <path value="$PROJECT_DIR$/RecipeAppAzureSQL/Recipe-App" />
+    </ignored-roots>
+    <MESSAGE value="v1.0" />
+    <MESSAGE value="Project refactor" />
+    <MESSAGE value="Wrapping commit: 20.12.2022" />
+    <MESSAGE value="Recipe CRUD Implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Recipe CRUD Implementation" />
+  </component>
+</project>
