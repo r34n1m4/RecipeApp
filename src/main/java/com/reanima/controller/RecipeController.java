@@ -6,13 +6,14 @@ import com.reanima.business.service.RecipeServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.List;
 import java.util.Optional;
 
-//@RestController
 @Controller
 public class RecipeController {
 
@@ -56,11 +57,11 @@ public class RecipeController {
         recipeServiceImpl.deleteById(recipeId);
         return "redirect:/recipelist";
     }
-    //json view
-    @GetMapping("/recipes")
-    public List<Recipe> getRecipe() {
-        return recipeServiceImpl.findAll();
-    }
+//    //json view
+//    @GetMapping("/recipes")
+//    public List<Recipe> getRecipe() {
+//        return recipeServiceImpl.findAll();
+//    }
 //    //postman
 //    @PostMapping("/recipe/save")
 //    public Recipe addRecipe(@RequestBody Recipe recipe) {

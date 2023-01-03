@@ -11,63 +11,84 @@
     <link th:href = "@{/stylesheet.css}" rel="stylesheet">
 </head>
 
-<body>
-<div><header>
-    <img th:src="@{/logo1.png}" class="imgnavbar">
-    <h1 class="namenavbar">Recipe App</h1>
-    <ul id="navbar">
-        <li><a th:href = "@{/recipelist}">Recipes</a></li>
-        <li><a th:href="@{/ingredientlist}">Ingredients</a></li>
-        <li><a href="#">Account</a></li>
-    </ul>
-</header></div>
+    <body>
+        <div>
+            <header>
+            <img th:src="@{/logo1.png}" class="imgnavbar">
+            <h1 class="namenavbar">Recipe App</h1>
+                <ul id="navbar">
+                    <li><a th:href="@{/recipelist}">Recipes</a></li>
+                    <li><a th:href="@{/ingredientlist}">Ingredients</a></li>
+                    <li><a href="#">Account</a></li>
+                </ul>
+            </header>
+        </div>
 
-<hr size="3px" color="#CA793D">
+        <hr size="3px" color="#CA793D">
 
-<div class="container">
+        <div class="container">
 
-    <h3>List: Ingredients</h3>
+            <h3>List: Ingredients</h3>
+            <a th:href="@{/saveingredient}"
+                class="btn btn-lg mb-3">
+                Add Ingredient
+            </a>
+            <hr/>
 
-    <hr/>
+            <table class="table table-bordered table-striped">
 
-    <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <!--
+    private int ingredientId;
+    private String ingredientName;
+    private String ingredientDescription;
+    private String ingredientType;
+    private float calories;
+    private float carbohydrates;
+    private float fat;
+    private float protein;
+    private float water;
+    private float cholesterol;-->
+                        <th>Ingredient</th>
+                        <th>Description</th>
+                        <th>Type</th>
+                        <th>Calories</th>
+                        <th>Carbohydrates</th>
+                        <th>Fat</th>
+                        <th>Protein</th>
+                        <th>Water</th>
+                        <th>Cholesterol</th>
+                        <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="ingredients : ${ingredient}">
 
-        <thead>
-        <tr>
-            <!-- <th>ID</th> -->
-            <th>Ingredient</th>
-            <th>Type</th>
-            <th>Description</th>
-            <th>Calories</th>
-            <th>Carbohydrates</th>
-            <th>Fat</th>
-            <th>Protein</th>
-            <th>Water</th>
-            <th>Cholesterol</th>
+                        <td th:text="${ingredients.ingredientName}"></td>
+                        <td th:text="${ingredients.ingredientDescription}"></td>
+                        <td th:text="${ingredients.ingredientType}"></td>
+                        <td th:text="${ingredients.calories}"></td>
+                        <td th:text="${ingredients.carbohydrates}"></td>
+                        <td th:text="${ingredients.fat}"></td>
+                        <td th:text="${ingredients.protein}"></td>
+                        <td th:text="${ingredients.water}"></td>
+                        <td th:text="${ingredients.cholesterol}"></td>
 
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="ingredient: ${ingredients_nutrition_1g}">
-            <!-- <td th:text="${ingredient.id}"></td> -->
-            <td th:text="${ingredient.ingredientName}"></td>
-            <td th:text="${ingredient.ingredientType}"></td>
-            <td th:text="${ingredient.ingredientDescription}"></td>
-            <td th:text="${ingredient.calories}"></td>
-            <td th:text="${ingredient.carbohydrates}"></td>
-            <td th:text="${ingredient.fat}"></td>
-            <td th:text="${ingredient.protein}"></td>
-            <td th:text="${ingredient.water}"></td>
-            <td th:text="${ingredient.cholesterol}"></td>
-
-
-        </tr>
-        </tbody>
-
-    </table>
-</div>
-
-
-</body>
-
+<!--                        <td>-->
+<!--                            <form action="#" th:action="@{/updateingredient}" method="POST">-->
+<!--                                <input type="hidden" name="ingredientId" th:value="${ingredients.ingredientId}">-->
+<!--                                <button type="submit" class="btn btn-warning btn-sm mb-3">Update</button>-->
+<!--                            </form>-->
+<!--                            <form action="#" th:action="@{/deleteingredient}" method="POST">-->
+<!--                                <input type="hidden" name="ingredientId" th:value="${ingredients.ingredientId}">-->
+<!--                                <button type="submit" class="btn btn-danger btn-sm mb-3"-->
+<!--                                onclick="if (!(confirm('Are you sure you want to delete this Ingredient?'))) return false">Delete</button>-->
+<!--                            </form>-->
+<!--                        </td>-->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
 </html>

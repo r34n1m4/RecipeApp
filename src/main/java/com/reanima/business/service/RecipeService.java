@@ -8,9 +8,9 @@ import java.util.Optional;
 public interface RecipeService {
     public List<Recipe> findAll();
 
-    public Optional<Recipe> findById(int theId);
+    public Optional<Recipe> findById(int recipeId);
 
     public Recipe save(Recipe theRecipe);
 
-    public List<Recipe> deleteById(int theId);
+    public List<Recipe> deleteById(int recipeId);
 }

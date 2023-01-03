@@ -4,9 +4,8 @@ import lombok.*;
 
 import javax.persistence.*;
 
-
 @Entity
-@Table(name = "ingredients_nutrition_1g")
+@Table(name = "ingredient")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -15,7 +14,7 @@ import javax.persistence.*;
 @Builder
 
 
-public class Ingredients {
+public class Ingredient {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,11 +24,11 @@ public class Ingredients {
     @Column(name = "ingr_name")
     private String ingredientName;
 
-    @Column(name = "ingr_type")
-    private String ingredientType;
-
     @Column(name = "ingr_desc")
     private String ingredientDescription;
+
+    @Column(name = "ingr_type")
+    private String ingredientType;
 
     @Column(name = "calories")
     private float calories;
