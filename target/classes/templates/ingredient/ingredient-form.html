@@ -15,20 +15,9 @@
     <div class="container">
         <h3>Add Ingredient</h3>
         <hr>
-        <!--
-private int ingredientId;
-private String ingredientName;
-private String ingredientDescription;
-private String ingredientType;
-private float calories;
-private float carbohydrates;
-private float fat;
-private float protein;
-private float water;
-private float cholesterol;-->
         <p class="h4 mb-4">Save Ingredient</p>
         <form action="#" th:action="@{/saveingredient}"
-                          th:object="${ingredients}"
+                          th:object="${ingredient}"
                           method="POST">
             <!-- Hidden form field to handle updates-->
             <input type="hidden" th:field="*{ingredientId}">
@@ -64,7 +53,7 @@ private float cholesterol;-->
             <button type="submit" class="btn btn-lg mb-3"
                     onclick="if (!(confirm('Are you sure you want to save changes for this Ingredient?'))) return false">Save</button>
             <hr>
-            <a th:href="@{/ingredientslist}">Back to Recipe List</a>
+            <a th:href="@{/ingredientlist}">Back to Recipe List</a>
         </form>
     </div>
 </body>
