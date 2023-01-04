@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c200b0a-6a10-494a-a144-03f51d64697f" name="Changes" comment="Ingredient Repo+Service Impl">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/controller/IngredientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/controller/IngredientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/ingredients/ingredient-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/ingredient/ingredient-form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/ingredients/ingredient-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/ingredient/ingredient-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/reanima/business/repository/IngredientsRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/reanima/business/repository/model/Ingredients$IngredientsBuilder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/reanima/business/repository/model/Ingredients.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/reanima/business/service/IngredientsService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/reanima/business/service/IngredientsServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/reanima/controller/IngredientsController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/ingredients/ingredient-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/ingredients/ingredient-form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/ingredients/ingredient-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/ingredients/ingredient-list.html" afterDir="false" />
-    </list>
+    <list default="true" id="2c200b0a-6a10-494a-a144-03f51d64697f" name="Changes" comment="Ingredient Controller Impl" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -246,7 +233,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672817767361</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Ingredient Controller Impl">
+      <created>1672820527576</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1672820527577</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -270,6 +264,7 @@
     <MESSAGE value="Wrapping commit: 20.12.2022" />
     <MESSAGE value="Recipe CRUD Implementation" />
     <MESSAGE value="Ingredient Repo+Service Impl" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ingredient Repo+Service Impl" />
+    <MESSAGE value="Ingredient Controller Impl" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ingredient Controller Impl" />
   </component>
 </project>
