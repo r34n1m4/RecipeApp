@@ -18,8 +18,8 @@ import java.util.Optional;
 @Controller
 public class IngredientController {
 
-    @Autowired
-    private IngredientRepository ingredientsRepository;
+//    @Autowired
+//    private IngredientRepository ingredientsRepository;
 
     @Autowired
     private IngredientServiceImpl ingredientsServiceImpl;

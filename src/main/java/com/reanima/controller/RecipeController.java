@@ -17,8 +17,8 @@ import java.util.Optional;
 @Controller
 public class RecipeController {
 
-    @Autowired
-    private RecipeRepository recipeRepository;
+//    @Autowired
+//    private RecipeRepository recipeRepository;
 
     @Autowired
     private RecipeServiceImpl recipeServiceImpl;

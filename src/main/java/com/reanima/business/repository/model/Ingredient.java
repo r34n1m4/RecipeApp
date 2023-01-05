@@ -13,7 +13,6 @@ import javax.persistence.*;
 @Setter
 @Builder
 
-
 public class Ingredient {
 
     @Id
