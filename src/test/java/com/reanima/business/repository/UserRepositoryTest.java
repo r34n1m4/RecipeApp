@@ -1,4 +1,5 @@
-import com.reanima.business.repository.UserRepository;
+package com.reanima.business.repository;
+
 import com.reanima.business.repository.model.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +17,6 @@ public class UserRepositoryTest {
 
     @Autowired
     private UserRepository userRepository;
-
-    @Autowired
     private TestEntityManager entityManager;
 
     @Test
@@ -31,5 +30,13 @@ public class UserRepositoryTest {
         User savedUser = userRepository.save(user);
         User existUser = entityManager.find(User.class, savedUser.getUserId());
         assertThat(existUser.getUserEmail()).isEqualTo(user.getUserEmail());
+    }
+
+    @Test
+    public void testFindUserByEmail() {
+        String userEmail = "test@gmail.com";
+
+        User user = userRepository.findByEmail(userEmail);
+        assertThat(user).isNotNull();
     }
 }

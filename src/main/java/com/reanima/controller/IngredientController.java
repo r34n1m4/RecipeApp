@@ -1,8 +1,7 @@
 package com.reanima.controller;
 
-import com.reanima.business.repository.IngredientRepository;
 import com.reanima.business.repository.model.Ingredient;
-import com.reanima.business.service.IngredientServiceImpl;
+import com.reanima.business.service.impl.IngredientServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

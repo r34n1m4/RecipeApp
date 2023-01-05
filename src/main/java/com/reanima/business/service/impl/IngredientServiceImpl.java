@@ -1,7 +1,8 @@
-package com.reanima.business.service;
+package com.reanima.business.service.impl;
 
 import com.reanima.business.repository.IngredientRepository;
 import com.reanima.business.repository.model.Ingredient;
+import com.reanima.business.service.IngredientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

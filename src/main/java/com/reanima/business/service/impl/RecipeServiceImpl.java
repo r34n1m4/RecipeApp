@@ -1,7 +1,8 @@
-package com.reanima.business.service;
+package com.reanima.business.service.impl;
 
 import com.reanima.business.repository.RecipeRepository;
 import com.reanima.business.repository.model.Recipe;
+import com.reanima.business.service.RecipeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class RecipeServiceImpl implements RecipeService{
+public class RecipeServiceImpl implements RecipeService {
 
     @Autowired
     private RecipeRepository recipeRepository;
