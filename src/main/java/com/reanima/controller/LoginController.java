@@ -33,7 +33,7 @@ public class LoginController {
     @PostMapping("/process-register")
     public String registerUser(@ModelAttribute("user_registration") User user) {
         userServiceImpl.save(user);
-        return "redirect:/login";
+        return "user/registration-success";
     }
 
 }

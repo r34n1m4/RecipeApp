@@ -4,18 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c200b0a-6a10-494a-a144-03f51d64697f" name="Changes" comment="Ingredient Controller Impl">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/business/repository/IngredientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/business/repository/IngredientRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/business/repository/RecipeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/business/repository/RecipeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/business/repository/model/Ingredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/business/repository/model/Ingredient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/controller/IngredientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/controller/IngredientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/controller/RecipeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/controller/RecipeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/ingredient/ingredient-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/ingredient/ingredient-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/recipe/recipe-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/recipe/recipe-form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/recipe/recipe-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/recipe/recipe-list.html" afterDir="false" />
+    <list default="true" id="2c200b0a-6a10-494a-a144-03f51d64697f" name="Changes" comment="User Creation Impl">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/reanima/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/reanima/controller/LoginController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -281,7 +272,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672820749311</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="User Creation Impl">
+      <created>1672930038964</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1672930038964</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -306,7 +304,8 @@
     <MESSAGE value="Recipe CRUD Implementation" />
     <MESSAGE value="Ingredient Repo+Service Impl" />
     <MESSAGE value="Ingredient Controller Impl" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ingredient Controller Impl" />
+    <MESSAGE value="User Creation Impl" />
+    <option name="LAST_COMMIT_MESSAGE" value="User Creation Impl" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
