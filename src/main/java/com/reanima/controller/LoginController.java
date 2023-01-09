@@ -49,6 +49,4 @@ public class LoginController {
         model.addAttribute("listUsers", listUsers);
         return "user/list-users";
     }
-
-
 }

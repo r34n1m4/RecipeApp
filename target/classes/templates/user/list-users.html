@@ -1,0 +1,48 @@
+<!-- This pattern planned to be used as an administration tool during upcoming development iterations.-->
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>List: Users</title>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+          crossorigin="anonymous" />
+    <link th:href = "@{/stylesheet.css}" rel="stylesheet">
+</head>
+<body>
+    <div class="container text-center">
+        <div>
+            <form th:action="@{/logout}" method="POST">
+                <input type="submit" value="Sign Out" >
+            </form>
+        </div>
+        <div>
+            <h1>
+                <img th:src="@{/logo1.png}" class="imgnavbar">
+                List of users for testing purposes.
+            </h1>
+        </div>
+        <div>
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Email</th>
+                        <th>Name</th>
+                        <th>Surname</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr th:each="user : ${listUsers}">
+                    <td th:text="${user.userId}"></td>
+                    <td th:text="${user.userEmail}"></td>
+                    <td th:text="${user.userName}"></td>
+                    <td th:text="${user.userSurname}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
