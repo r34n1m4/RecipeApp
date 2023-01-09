@@ -12,5 +12,5 @@ public interface RecipeService {
 
     public Recipe save(Recipe theRecipe);
 
-    public List<Recipe> deleteById(int recipeId);
+    public void deleteById(int recipeId);
 }

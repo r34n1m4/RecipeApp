@@ -33,8 +33,7 @@ public class RecipeServiceImpl implements RecipeService {
     }
 
     @Override
-    public List<Recipe> deleteById(int recipeId) {
+    public void deleteById(int recipeId) {
         recipeRepository.deleteById(recipeId);
-        return null;
     }
 }

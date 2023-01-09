@@ -12,5 +12,5 @@ public interface IngredientService {
 
     public Ingredient save(Ingredient ingredient);
 
-    public List<Ingredient> deleteById(int theId);
+    public void deleteById(int theId);
 }

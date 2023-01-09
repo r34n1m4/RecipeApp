@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="2c200b0a-6a10-494a-a144-03f51d64697f" name="Changes" comment="User Login/Registration/Security/Encryption Impl">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/business/service/IngredientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/business/service/IngredientService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/business/service/RecipeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/business/service/RecipeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/business/service/impl/IngredientServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/business/service/impl/IngredientServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/business/service/impl/RecipeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/business/service/impl/RecipeServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,9 +19,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="HTML File" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -64,10 +67,14 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/com/reanima/business/repository/model" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates/user" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.reanima.business.model" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\GitHub\RecipeApp\src\main\resources\templates\user" />
       <recent name="D:\GitHub\RecipeApp\src\main\resources\templates\ingredients" />
@@ -320,7 +327,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673258033046</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="User Login/Registration/Security/Encryption Impl">
+      <created>1673268371092</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1673268371092</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
