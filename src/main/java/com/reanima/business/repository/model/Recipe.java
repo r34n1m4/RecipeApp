@@ -1,8 +1,10 @@
 package com.reanima.business.repository.model;
 
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "recipe")
@@ -34,5 +36,9 @@ public class Recipe {
 
     @Column(name = "dish_type")
     private String dishType;
+
+    @CreationTimestamp
+    @Column(name = "recipe_created")
+    private LocalDateTime recipeCreated;
 
 }

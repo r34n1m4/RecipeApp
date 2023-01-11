@@ -1,8 +1,10 @@
 package com.reanima.business.repository.model;
 
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "user_registration")
@@ -31,5 +33,9 @@ public class User {
 
     @Column(name = "user_surname")
     private String userSurname;
+
+    @CreationTimestamp
+    @Column(name = "user_created")
+    private LocalDateTime userCreated;
 
 }

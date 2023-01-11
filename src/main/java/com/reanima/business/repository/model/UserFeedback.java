@@ -1,8 +1,10 @@
 package com.reanima.business.repository.model;
 
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "user_feedback")
@@ -23,4 +25,8 @@ public class UserFeedback {
 
     @Column(name="user_rating")
     private int userRating;
+
+    @CreationTimestamp
+    @Column(name = "feedback_created")
+    private LocalDateTime feedbackCreated;
 }

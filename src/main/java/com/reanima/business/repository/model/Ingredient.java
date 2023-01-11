@@ -1,8 +1,10 @@
 package com.reanima.business.repository.model;
 
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "ingredient")
@@ -46,4 +48,8 @@ public class Ingredient {
 
     @Column(name = "cholesterol")
     private float cholesterol;
+
+    @CreationTimestamp
+    @Column(name = "ingredient_created")
+    private LocalDateTime ingredientCreated;
 }
