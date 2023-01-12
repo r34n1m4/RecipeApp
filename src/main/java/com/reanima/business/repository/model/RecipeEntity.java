@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @Setter
 @Builder
 
-public class Recipe {
+public class RecipeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

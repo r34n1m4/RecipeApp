@@ -18,7 +18,7 @@
 
         <p class="h4 mb-4">Save Recipe</p>
         <form action="#" th:action="@{/saverecipe}"
-                          th:object="${recipe}"
+                          th:object="${recipeDto}"
                           method="POST">
             <!-- Hidden form field to handle updates-->
             <input type="hidden" th:field="*{recipeId}">

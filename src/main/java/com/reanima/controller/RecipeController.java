@@ -1,6 +1,7 @@
 package com.reanima.controller;
 
-import com.reanima.business.repository.model.Recipe;
+import com.reanima.business.model.RecipeDto;
+import com.reanima.business.repository.model.RecipeEntity;
 import com.reanima.business.service.impl.RecipeServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,44 +17,46 @@ import java.util.Optional;
 @Controller
 public class RecipeController {
 
-//    @Autowired
-//    private RecipeRepository recipeRepository;
-
     @Autowired
     private RecipeServiceImpl recipeServiceImpl;
 
+//    @GetMapping("/recipelist")
+//    public String showAll(Model model) {
+//        model.addAttribute("recipeDto", recipeServiceImpl.findAllRecipes());
+//        return "recipe/recipe-list";
+//    }
     //html+css view
     @GetMapping({"/recipelist"})
     public ModelAndView getAllRecipes() {
         ModelAndView modelAndView = new ModelAndView("recipe/recipe-list");
-        modelAndView.addObject("recipe", recipeServiceImpl.findAll());
+        modelAndView.addObject("recipeDto", recipeServiceImpl.findAllRecipes());
         return modelAndView;
     }
     //controller: show save form
     @GetMapping({"/saverecipe"})
     public ModelAndView addForm() {
         ModelAndView modelAndView = new ModelAndView("recipe/recipe-form");
-        Recipe recipe = new Recipe();
-        modelAndView.addObject("recipe", recipe);
+        RecipeDto recipeDto = new RecipeDto();
+        modelAndView.addObject("recipeDto", recipeDto);
         return modelAndView;
     }
     //controller: save form
     @PostMapping("/saverecipe")
-    public String saveRecipe(@ModelAttribute("recipe") Recipe recipe) {
-        recipeServiceImpl.save(recipe);
+    public String saveRecipe(@ModelAttribute("recipeDto") RecipeDto recipeDto) {
+        recipeServiceImpl.saveRecipe(recipeDto);
         return "redirect:/recipelist";
     }
     //controller: update form and save changes
     @PostMapping("/updaterecipe")
     public String updateRecipe(@RequestParam("recipeId") int recipeId, Model model) {
-        Optional<Recipe> recipe = recipeServiceImpl.findById(recipeId);
-        model.addAttribute("recipe", recipe);
+        Optional<RecipeDto> recipeDto = recipeServiceImpl.findRecipeById(recipeId);
+        model.addAttribute("recipe", recipeDto);
         return "recipe/recipe-form";
     }
     //controller: delete
     @PostMapping("/deleterecipe")
     public String deleteRecipe(@RequestParam("recipeId") int recipeId) {
-        recipeServiceImpl.deleteById(recipeId);
+        recipeServiceImpl.deleteRecipeById(recipeId);
         return "redirect:/recipelist";
     }
 //    //json view

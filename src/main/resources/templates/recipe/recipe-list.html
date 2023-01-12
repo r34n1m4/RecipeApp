@@ -49,20 +49,20 @@
                 </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="recipe : ${recipe}">
-<!--                         <td style="visibility:collapse" th:text="${recipe.recipeId}"></td>-->
-                        <td th:text="${recipe.recipeName}"></td>
-                        <td th:text="${recipe.recipeDescription}"></td>
-                        <td th:text="${recipe.recipePreparation}"></td>
-                        <td th:text="${recipe.cuisineType}"></td>
-                        <td th:text="${recipe.dishType}"></td>
+                    <tr th:each="recipeDto : ${recipeDto}">
+<!--                         <td style="visibility:collapse" th:text="${recipeEntity.recipeId}"></td>-->
+                        <td th:text="${recipeDto.recipeName}"></td>
+                        <td th:text="${recipeDto.recipeDescription}"></td>
+                        <td th:text="${recipeDto.recipePreparation}"></td>
+                        <td th:text="${recipeDto.cuisineType}"></td>
+                        <td th:text="${recipeDto.dishType}"></td>
                         <td>
                             <form action="#" th:action="@{/updaterecipe}" method="POST">
-                                <input type="hidden" name="recipeId" th:value="${recipe.recipeId}">
+                                <input type="hidden" name="recipeId" th:value="${recipeDto.recipeId}">
                                 <button type="submit" class="btn btn-warning btn-sm mb-3">Update</button>
                             </form>
                             <form action="#" th:action="@{/deleterecipe}" method="POST">
-                                <input type="hidden" name="recipeId" th:value="${recipe.recipeId}">
+                                <input type="hidden" name="recipeId" th:value="${recipeDto.recipeId}">
                                 <button type="submit" class="btn btn-danger btn-sm mb-3"
                                 onclick="if (!(confirm('Are you sure you want to delete this Recipe?'))) return false">Delete</button>
                             </form>
