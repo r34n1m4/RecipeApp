@@ -1,7 +1,6 @@
 package com.reanima.controller;
 
 import com.reanima.business.model.RecipeDto;
-import com.reanima.business.repository.model.RecipeEntity;
 import com.reanima.business.service.impl.RecipeServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,16 +19,11 @@ public class RecipeController {
     @Autowired
     private RecipeServiceImpl recipeServiceImpl;
 
-//    @GetMapping("/recipelist")
-//    public String showAll(Model model) {
-//        model.addAttribute("recipeDto", recipeServiceImpl.findAllRecipes());
-//        return "recipe/recipe-list";
-//    }
     //html+css view
     @GetMapping({"/recipelist"})
     public ModelAndView getAllRecipes() {
         ModelAndView modelAndView = new ModelAndView("recipe/recipe-list");
-        modelAndView.addObject("recipeDto", recipeServiceImpl.findAllRecipes());
+        modelAndView.addObject("recipeEntity", recipeServiceImpl.findAllRecipes());
         return modelAndView;
     }
     //controller: show save form
@@ -50,7 +44,7 @@ public class RecipeController {
     @PostMapping("/updaterecipe")
     public String updateRecipe(@RequestParam("recipeId") int recipeId, Model model) {
         Optional<RecipeDto> recipeDto = recipeServiceImpl.findRecipeById(recipeId);
-        model.addAttribute("recipe", recipeDto);
+        model.addAttribute("recipeDto", recipeDto);
         return "recipe/recipe-form";
     }
     //controller: delete

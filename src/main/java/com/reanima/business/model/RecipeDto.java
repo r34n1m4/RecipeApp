@@ -22,7 +22,7 @@ public class RecipeDto {
     @NumberFormat
     private int recipeId;
 
-//    @NotNull(message = FIELD_NOT_NULL)
+    @NotNull(message = FIELD_NOT_NULL)
     @Size(max = 50, message = FIELD_MAX_LENGTH_50)
     private String recipeName;
 
@@ -39,7 +39,7 @@ public class RecipeDto {
     @Size(max = 50, message = FIELD_MAX_LENGTH_50)
     private String dishType;
 
-//    @NotNull(message = FIELD_NOT_NULL)
+    @NotNull(message = FIELD_NOT_NULL)
     private LocalDateTime recipeCreated;
 
 }

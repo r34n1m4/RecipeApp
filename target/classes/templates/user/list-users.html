@@ -34,11 +34,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                <tr th:each="user : ${listUsers}">
-                    <td th:text="${user.userId}"></td>
-                    <td th:text="${user.userEmail}"></td>
-                    <td th:text="${user.userName}"></td>
-                    <td th:text="${user.userSurname}"></td>
+                <tr th:each="userEntity : ${listUsers}">
+                    <td th:text="${userEntity.userId}"></td>
+                    <td th:text="${userEntity.userEmail}"></td>
+                    <td th:text="${userEntity.userName}"></td>
+                    <td th:text="${userEntity.userSurname}"></td>
                 </tr>
                 </tbody>
             </table>

@@ -1,6 +1,6 @@
 package com.reanima.controller;
 
-import com.reanima.business.repository.model.User;
+import com.reanima.business.repository.model.UserEntity;
 import com.reanima.business.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -29,24 +29,24 @@ public class LoginController {
     @GetMapping({"/register"})
     public ModelAndView registrationForm() {
         ModelAndView modelAndView = new ModelAndView("user/registration-form");
-        User user = new User();
-        modelAndView.addObject("user_registration", user);
+        UserEntity userEntity = new UserEntity();
+        modelAndView.addObject("user_registration", userEntity);
         return modelAndView;
     }
     //controller: save user
     @PostMapping("/process-register")
-    public String registerUser(@ModelAttribute("user_registration") User user) {
+    public String registerUser(@ModelAttribute("user_registration") UserEntity userEntity) {
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-        String encodePassword = encoder.encode(user.getUserPassword());
-        user.setUserPassword(encodePassword);
-        userServiceImpl.save(user);
+        String encodePassword = encoder.encode(userEntity.getUserPassword());
+        userEntity.setUserPassword(encodePassword);
+        userServiceImpl.saveUser(userEntity);
         return "user/registration-success";
     }
     //controller: list-users for tests
     @GetMapping("/list-users")
     public String listUsers(Model model) {
-        List<User> listUsers = userServiceImpl.findAll();
-        model.addAttribute("listUsers", listUsers);
+        List<UserEntity> userEntity = userServiceImpl.findAllUsers();
+        model.addAttribute("listUsers", userEntity);
         return "user/list-users";
     }
 }

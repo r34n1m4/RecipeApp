@@ -1,6 +1,6 @@
 package com.reanima.controller;
 
-import com.reanima.business.repository.model.Ingredient;
+import com.reanima.business.model.IngredientDto;
 import com.reanima.business.service.impl.IngredientServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,9 +17,6 @@ import java.util.Optional;
 @Controller
 public class IngredientController {
 
-//    @Autowired
-//    private IngredientRepository ingredientsRepository;
-
     @Autowired
     private IngredientServiceImpl ingredientsServiceImpl;
 
@@ -27,7 +24,7 @@ public class IngredientController {
     @GetMapping({"/ingredientlist"})
     public ModelAndView getAllIngredients() {
         ModelAndView modelAndView = new ModelAndView("ingredient/ingredient-list");
-        modelAndView.addObject("ingredient", ingredientsServiceImpl.findAll());
+        modelAndView.addObject("ingredientEntity", ingredientsServiceImpl.findAllIngredients());
         return modelAndView;
     }
 
@@ -35,27 +32,27 @@ public class IngredientController {
     @GetMapping({"/saveingredient"})
     public ModelAndView addForm() {
         ModelAndView modelAndView = new ModelAndView("ingredient/ingredient-form");
-        Ingredient ingredient = new Ingredient();
-        modelAndView.addObject("ingredient", ingredient);
+        IngredientDto ingredientDto = new IngredientDto();
+        modelAndView.addObject("ingredientEntity", ingredientDto);
         return modelAndView;
     }
     //controller: save form
     @PostMapping("/saveingredient")
-    public String saveIngredient(@ModelAttribute("ingredient") Ingredient ingredient) {
-        ingredientsServiceImpl.save(ingredient);
+    public String saveIngredient(@ModelAttribute("ingredientEntity") IngredientDto IngredientDto) {
+        ingredientsServiceImpl.saveIngredient(IngredientDto);
         return "redirect:/ingredientlist";
     }
     //controller: update form and save changes
     @PostMapping("/updateingredient")
     public String updateIngredient(@RequestParam("ingredientId") int ingredientId, Model model) {
-        Optional<Ingredient> ingredient = ingredientsServiceImpl.findById(ingredientId);
-        model.addAttribute("ingredient", ingredient);
+        Optional<IngredientDto> ingredientDto = ingredientsServiceImpl.findIngredientById(ingredientId);
+        model.addAttribute("ingredientEntity", ingredientDto);
         return "ingredient/ingredient-form";
     }
     //controller: delete
     @PostMapping("/deleteingredient")
     public String deleteIngredient(@RequestParam("ingredientId") int ingredientId) {
-        ingredientsServiceImpl.deleteById(ingredientId);
+        ingredientsServiceImpl.deleteIngredientById(ingredientId);
         return "redirect:/ingredientlist";
     }
 

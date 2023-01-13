@@ -49,7 +49,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="recipeDto : ${recipeDto}">
+                    <tr th:each="recipeDto : ${recipeEntity}">
 <!--                         <td style="visibility:collapse" th:text="${recipeEntity.recipeId}"></td>-->
                         <td th:text="${recipeDto.recipeName}"></td>
                         <td th:text="${recipeDto.recipeDescription}"></td>

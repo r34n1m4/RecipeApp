@@ -1,17 +1,18 @@
 package com.reanima.business.service;
 
-import com.reanima.business.repository.model.User;
+import com.reanima.business.repository.model.UserEntity;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface UserService {
 
-    List<User> findAll();
+    List<UserEntity> findAllUsers();
 
-    Optional<User> findById(int userId);
+    Optional<UserEntity> findById(int userId);
 
-    User save(User user);
+    void saveUser(UserEntity userEntity);
 
-    List<User> deleteById(int userId);
+    void deleteById(int userId);
+
 }

@@ -52,25 +52,25 @@
                 </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="ingredient : ${ingredient}">
+                    <tr th:each="ingredientDto : ${ingredientEntity}">
 
-                        <td th:text="${ingredient.ingredientName}"></td>
-                        <td th:text="${ingredient.ingredientDescription}"></td>
-                        <td th:text="${ingredient.ingredientType}"></td>
-                        <td th:text="${ingredient.calories}"></td>
-                        <td th:text="${ingredient.carbohydrates}"></td>
-                        <td th:text="${ingredient.fat}"></td>
-                        <td th:text="${ingredient.protein}"></td>
-                        <td th:text="${ingredient.water}"></td>
-                        <td th:text="${ingredient.cholesterol}"></td>
+                        <td th:text="${ingredientDto.ingredientName}"></td>
+                        <td th:text="${ingredientDto.ingredientDescription}"></td>
+                        <td th:text="${ingredientDto.ingredientType}"></td>
+                        <td th:text="${ingredientDto.calories}"></td>
+                        <td th:text="${ingredientDto.carbohydrates}"></td>
+                        <td th:text="${ingredientDto.fat}"></td>
+                        <td th:text="${ingredientDto.protein}"></td>
+                        <td th:text="${ingredientDto.water}"></td>
+                        <td th:text="${ingredientDto.cholesterol}"></td>
 
                         <td>
                             <form action="#" th:action="@{/updateingredient}" method="POST">
-                                <input type="hidden" name="ingredientId" th:value="${ingredient.ingredientId}">
+                                <input type="hidden" name="ingredientId" th:value="${ingredientDto.ingredientId}">
                                 <button type="submit" class="btn btn-warning btn-sm mb-3">Update</button>
                             </form>
                             <form action="#" th:action="@{/deleteingredient}" method="POST">
-                                <input type="hidden" name="ingredientId" th:value="${ingredient.ingredientId}">
+                                <input type="hidden" name="ingredientId" th:value="${ingredientDto.ingredientId}">
                                 <button type="submit" class="btn btn-danger btn-sm mb-3"
                                 onclick="if (!(confirm('Are you sure you want to delete this Ingredient?'))) return false">Delete</button>
                             </form>

@@ -1,6 +1,6 @@
 package com.reanima.business.security;
 
-import com.reanima.business.repository.model.User;
+import com.reanima.business.repository.model.UserEntity;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +14,7 @@ import java.util.Collection;
 public class CustomUserDetails implements UserDetails {
 
     @Autowired
-    private User user;
+    private UserEntity userEntity;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -23,12 +23,12 @@ public class CustomUserDetails implements UserDetails {
 
     @Override
     public String getPassword() {
-        return user.getUserPassword();
+        return userEntity.getUserPassword();
     }
 
     @Override
     public String getUsername() {
-        return user.getUserEmail();
+        return userEntity.getUserEmail();
     }
 
     @Override
@@ -52,6 +52,6 @@ public class CustomUserDetails implements UserDetails {
     }
 
     public String getFullName() {
-        return user.getUserName() + " " + user.getUserSurname();
+        return userEntity.getUserName() + " " + userEntity.getUserSurname();
     }
 }
