@@ -5,9 +5,11 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
-@Table(name = "user_registration")
+@Table(name = "users_registration")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -34,8 +36,17 @@ public class UserEntity {
     @Column(name = "user_surname")
     private String userSurname;
 
+    @Column(name = "user_enabled")
+    private boolean enabled;
+
     @CreationTimestamp
     @Column(name = "user_created")
     private LocalDateTime userCreated;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "users_roles",
+    joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+
+    private Set<RoleEntity> roles = new HashSet<>();
 
 }

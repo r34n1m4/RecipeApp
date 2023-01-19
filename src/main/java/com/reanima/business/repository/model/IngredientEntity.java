@@ -50,6 +50,6 @@ public class IngredientEntity {
     private float cholesterol;
 
     @CreationTimestamp
-    @Column(name = "ingredient_created")
+    @Column(name = "ingr_created")
     private LocalDateTime ingredientCreated;
 }

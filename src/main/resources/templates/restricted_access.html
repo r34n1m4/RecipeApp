@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Restricted Access</title>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+          crossorigin="anonymous" />
+    <link th:href = "@{/stylesheet.css}" rel="stylesheet">
+</head>
+<body>
+    <h2>Sorry, but you don't have permission to access this page.
+    <br>
+        <a th:href="@{/home}">Back to Welcome Page</a>
+    </h2>
+</body>
+</html>

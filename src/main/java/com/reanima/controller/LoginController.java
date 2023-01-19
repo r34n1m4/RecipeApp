@@ -30,12 +30,12 @@ public class LoginController {
     public ModelAndView registrationForm() {
         ModelAndView modelAndView = new ModelAndView("user/registration-form");
         UserEntity userEntity = new UserEntity();
-        modelAndView.addObject("user_registration", userEntity);
+        modelAndView.addObject("users_registration", userEntity);
         return modelAndView;
     }
     //controller: save user
     @PostMapping("/process-register")
-    public String registerUser(@ModelAttribute("user_registration") UserEntity userEntity) {
+    public String registerUser(@ModelAttribute("users_registration") UserEntity userEntity) {
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         String encodePassword = encoder.encode(userEntity.getUserPassword());
         userEntity.setUserPassword(encodePassword);
@@ -48,5 +48,10 @@ public class LoginController {
         List<UserEntity> userEntity = userServiceImpl.findAllUsers();
         model.addAttribute("listUsers", userEntity);
         return "user/list-users";
+    }
+
+    @GetMapping("/restricted_access")
+    public String restrictedAccess() {
+        return "restricted_access";
     }
 }
