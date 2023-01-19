@@ -6,13 +6,6 @@ import java.util.List;
 import java.util.Optional;
 
 public interface RecipeService {
-//    public List<RecipeEntity> findAll();
-//
-//    public Optional<RecipeEntity> findById(int recipeId);
-//
-//    public RecipeEntity save(RecipeEntity theRecipeEntity);
-//
-//    public void deleteById(int recipeId);
 
     List<RecipeDto> findAllRecipes();
 
