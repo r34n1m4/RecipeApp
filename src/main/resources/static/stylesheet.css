@@ -1,6 +1,6 @@
 body {
         font-family: Comic Sans MS;
-        background-color: #FCEECC;
+        background-color: #D3D3D3;
     }
     h2 {
         position: absolute;
@@ -13,7 +13,7 @@ body {
         text-align: left;
     }
     tr:first-child, td:first-child {
-        background: #CA793D;
+        background: #394959; #CA793D
         color: white;
     }
     tr, td {
@@ -23,27 +23,28 @@ body {
         padding: 10px;
     }
     td {
-        background: #F0B990;
+        background: #808080; //#F0B990
     }
 
     .imgnavbar {
-        margin-left: 10%;
-        height: 100px;
+        margin-top: 2%;
+        margin-center: 20%;
+        height: 200px;
     }
     .namenavbar {
-        position: absolute;
-        left: 23%;
+        position: center;
+        margin-left: 2%;
         top: 5%;
     }
     #navbar {
-        margin: 0;
+        margin-left: 2%;
         padding: 0;
         list-style-type: none;
-        border: 2px solid #CA793D;
+        border: 2px solid #394959; #CA793D
         border-radius: 20px 5px;
         width: 550px;
         text-align: center;
-        background-color: #F0B990;
+        background-color: #808080; //#F0B990
         position: absolute;
         right: 10%;
         top: 9%;
@@ -54,13 +55,17 @@ body {
         padding: 5px 10px;
         text-decoration: none;
         font-weight: bold;
+        color: black;
         display: inline-block;
         width: 100px;
       }
       #navbar a:hover {
         border-radius: 20px 5px;
-        background-color: #CA793D;
+        background-color: #394959; //#CA793D
       }
       #btn {
-        background-color: #F0B990;
+        background-color: #808080; //#F0B990
+      }
+      #btn-warning {
+        background-color: #394959 !important;
       }

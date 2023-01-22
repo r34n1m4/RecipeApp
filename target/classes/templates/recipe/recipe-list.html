@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.w3.org/1999/xhtml">
 
 <head>
     <title>List: Recipes</title>
@@ -14,58 +15,61 @@
     <body>
         <div>
             <header>
-            <img th:src="@{/logo1.png}" class="imgnavbar">
-            <h1 class="namenavbar">Recipe App</h1>
+            <img th:src="@{/logo_nobg2.png}" class="imgnavbar">
+            <h1 class="namenavbar"></h1>
                 <ul id="navbar">
                     <li><a th:href="@{/recipelist}">Recipes</a></li>
                     <li><a th:href="@{/ingredientlist}">Ingredients</a></li>
-                    <li><a th:href="@{/home}">Account</a></li>
+                    <li><a th:href="@{/home}">Account: <span sec:authentication="name">Email</span></a></li>
+                    <li><a th:href="@{/logout}">Logout</a></li>
                 </ul>
             </header>
         </div>
 
-        <hr size="3px" color="#CA793D">
+        <hr size="3px" color="#394959">
 
         <div class="container">
 
             <h3>List: Recipes</h3>
-            <a th:href="@{/saverecipe}"
-                class="btn btn-lg mb-3">
-                Add Recipe
-            </a>
-            <hr/>
+            <div sec:authorize="hasAnyAuthority('ADMIN','USER')">
+                <a th:href="@{/saverecipe}"
+                   class="btn btn-lg mb-3">
+                    Add Recipe
+                </a>
+            </div>
 
             <table class="table table-bordered table-striped">
 
                 <thead>
                     <tr>
-<!--                         <th style="visibility:collapse">ID</th>-->
+
                         <th>Recipe</th>
                         <th>Description</th>
                         <th>Preparation</th>
                         <th>Cuisine Type</th>
                         <th>Dish Type</th>
-                        <th>Action</th>
+                        <th sec:authorize="hasAnyAuthority('ADMIN','USER')">Action</th>
                 </tr>
                 </thead>
                 <tbody>
                     <tr th:each="recipeDto : ${recipeEntity}">
-<!--                         <td style="visibility:collapse" th:text="${recipeEntity.recipeId}"></td>-->
                         <td th:text="${recipeDto.recipeName}"></td>
                         <td th:text="${recipeDto.recipeDescription}"></td>
                         <td th:text="${recipeDto.recipePreparation}"></td>
                         <td th:text="${recipeDto.cuisineType}"></td>
                         <td th:text="${recipeDto.dishType}"></td>
-                        <td>
+                        <td sec:authorize="hasAnyAuthority('ADMIN','USER')">
                             <form action="#" th:action="@{/updaterecipe}" method="POST">
                                 <input type="hidden" name="recipeId" th:value="${recipeDto.recipeId}">
                                 <button type="submit" class="btn btn-warning btn-sm mb-3">Update</button>
                             </form>
-                            <form action="#" th:action="@{/deleterecipe}" method="POST">
-                                <input type="hidden" name="recipeId" th:value="${recipeDto.recipeId}">
-                                <button type="submit" class="btn btn-danger btn-sm mb-3"
-                                onclick="if (!(confirm('Are you sure you want to delete this Recipe?'))) return false">Delete</button>
-                            </form>
+                            <div sec:authorize="hasAuthority('ADMIN')">
+                                <form action="#" th:action="@{/deleterecipe}" method="POST">
+                                    <input type="hidden" name="recipeId" th:value="${recipeDto.recipeId}">
+                                    <button type="submit" class="btn btn-danger btn-sm mb-3"
+                                            onclick="if (!(confirm('Are you sure you want to delete this Recipe?'))) return false">Delete</button>
+                                </form>
+                            <div>
                         </td>
                     </tr>
                 </tbody>

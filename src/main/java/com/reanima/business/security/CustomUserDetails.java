@@ -58,7 +58,7 @@ public class CustomUserDetails implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return userEntity.isEnabled();
+        return true;
     }
 
     public String getFullName() {

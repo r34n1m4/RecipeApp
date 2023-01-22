@@ -25,6 +25,11 @@ public class LoginController {
         return "home";
     }
 
+    @GetMapping("/logout")
+    public String logout() {
+        return "home";
+    }
+
     //controller: show save form
     @GetMapping({"/register"})
     public ModelAndView registrationForm() {

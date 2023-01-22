@@ -37,7 +37,7 @@ public class UserEntity {
     private String userSurname;
 
     @Column(name = "user_enabled")
-    private boolean enabled;
+    private boolean enabled = true;
 
     @CreationTimestamp
     @Column(name = "user_created")

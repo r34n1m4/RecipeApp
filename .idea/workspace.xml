@@ -4,22 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c200b0a-6a10-494a-a144-03f51d64697f" name="Changes" comment="Ingredient DTO model Impl. Code cleanup.">
+    <list default="true" id="2c200b0a-6a10-494a-a144-03f51d64697f" name="Changes" comment="Role Model authorization Impl">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/business/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/business/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/business/repository/model/IngredientEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/business/repository/model/IngredientEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/business/repository/model/RoleEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/business/repository/model/RoleEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/business/repository/model/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/business/repository/model/UserEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/business/security/CustomUserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/business/security/CustomUserDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/business/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/business/security/WebSecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/stylesheet.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/ingredient/ingredient-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/ingredient/ingredient-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/recipe/recipe-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/recipe/recipe-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/list-users.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/list-users.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/registration-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/registration-form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/reanima/business/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/reanima/business/repository/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/reanima/business/repository/model/IngredientEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/reanima/business/repository/model/IngredientEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/reanima/business/repository/model/UserEntity$UserEntityBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/reanima/business/repository/model/UserEntity$UserEntityBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/registration-success.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/registration-success.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/reanima/business/repository/model/UserEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/reanima/business/repository/model/UserEntity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/reanima/business/security/CustomUserDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/reanima/business/security/CustomUserDetails.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/reanima/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/reanima/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/ingredient/ingredient-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/ingredient/ingredient-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/recipe/recipe-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/recipe/recipe-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/user/list-users.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/user/list-users.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/user/registration-success.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/user/registration-success.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/reanima/business/mapper/IngredientMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/reanima/business/mapper/IngredientMapperImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/reanima/business/mapper/RecipeMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/reanima/business/mapper/RecipeMapperImpl.java" afterDir="false" />
     </list>
@@ -40,7 +46,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -98,9 +103,9 @@
       <recent name="D:\GitHub\RecipeAppAzureSQL\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\GitHub\RecipeApp\src\main\resources\static" />
       <recent name="D:\GitHub\RecipeApp\src\main\resources\templates" />
       <recent name="D:\GitHub\RecipeApp\src\main\resources\templates\user" />
-      <recent name="D:\GitHub\RecipeApp\src\main\resources\static" />
       <recent name="D:\GitHub\RecipeApp\src\main\resources" />
       <recent name="D:\GitHub\RecipeApp\src\main\resources\templates\ingredients" />
     </key>
@@ -383,7 +388,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673621505819</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Role Model authorization Impl">
+      <created>1674120257034</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1674120257034</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -424,7 +436,8 @@
     <MESSAGE value="User Login/Registration/Security/Encryption Impl" />
     <MESSAGE value="Stable version before refactoring" />
     <MESSAGE value="Ingredient DTO model Impl. Code cleanup." />
-    <option name="LAST_COMMIT_MESSAGE" value="Ingredient DTO model Impl. Code cleanup." />
+    <MESSAGE value="Role Model authorization Impl" />
+    <option name="LAST_COMMIT_MESSAGE" value="Role Model authorization Impl" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
