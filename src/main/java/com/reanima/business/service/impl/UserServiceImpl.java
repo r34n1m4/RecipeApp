@@ -1,5 +1,7 @@
 package com.reanima.business.service.impl;
 
+import com.reanima.business.mapper.UserMapper;
+import com.reanima.business.model.UserDto;
 import com.reanima.business.repository.UserRepository;
 import com.reanima.business.repository.model.UserEntity;
 import com.reanima.business.service.UserService;
@@ -8,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -15,20 +18,28 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserRepository userRepository;
-    private UserEntity userEntity;
+
+    @Autowired
+    private UserMapper userMapper;
 
     @Override
-    public List<UserEntity> findAllUsers() {
-        return userRepository.findAll();
+    public List<UserDto> findAllUsers() {
+
+        List<UserEntity> userEntity = userRepository.findAll();
+        return userEntity.stream().map(userMapper::entityToDto).collect(Collectors.toList());
     }
 
     @Override
-    public Optional<UserEntity> findById(int userId) {
-        return userRepository.findById(userId);
+    public Optional<UserDto> findById(int userId) {
+
+        Optional<UserEntity> userEntity = userRepository.findById(userId);
+        return userEntity.map(userMapper::entityToDto);
     }
 
-    public void saveUser(UserEntity userEntity) {
-        userRepository.save(userEntity);
+    public void saveUser(UserDto userDto) {
+
+        UserEntity userEntity = userRepository.save(userMapper.dtoToEntity(userDto));
+        userMapper.entityToDto(userEntity);
     }
 
     @Override

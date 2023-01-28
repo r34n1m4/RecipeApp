@@ -24,10 +24,10 @@
         </h1>
     </div>
     <div sec:authorize="isAuthenticated()">
-        Only for authenticated users!
         Welcome <span sec:authentication="name">Email</span>
         <br>
-        <span sec:authentication="principal.authorities">Roles</span>
+        Role: <span sec:authentication="principal.authorities">Roles</span>
+        <br>
     </div>
 
     <form th:action="@{/home}" method="GET">
@@ -46,16 +46,14 @@
                 <th>Email</th>
                 <th>Name</th>
                 <th>Surname</th>
-                <th>Role</th>
             </tr>
             </thead>
             <tbody>
-            <tr th:each="userEntity : ${listUsers}">
-                <td th:text="${userEntity.userId}"></td>
-                <td th:text="${userEntity.userEmail}"></td>
-                <td th:text="${userEntity.userName}"></td>
-                <td th:text="${userEntity.userSurname}"></td>
-                <td th:text="${userEntity.roleName}"></td>
+            <tr th:each="userDto : ${usersList}">
+                <td th:text="${userDto.userId}"></td>
+                <td th:text="${userDto.userEmail}"></td>
+                <td th:text="${userDto.userName}"></td>
+                <td th:text="${userDto.userSurname}"></td>
             </tr>
             </tbody>
         </table>

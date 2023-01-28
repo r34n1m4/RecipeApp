@@ -18,8 +18,8 @@ import javax.sql.DataSource;
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-//    @Autowired
-//    private DataSource dataSource;
+    @Autowired
+    private DataSource dataSource;
 
     @Bean
     public UserDetailsService userDetailsService() {
@@ -64,17 +64,4 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .exceptionHandling().accessDeniedPage("/restricted_access");
     }
-
-//    @Override
-//    protected void configure(HttpSecurity http) throws Exception {
-//        http.authorizeRequests()
-//                .antMatchers("/list-users")
-//                .authenticated().anyRequest().permitAll()
-//                .and()
-//                .formLogin()
-//                .usernameParameter("userEmail")
-//                .defaultSuccessUrl("/list-users").permitAll()
-//                .and()
-//                .logout().logoutSuccessUrl("/").permitAll();
-//    }
 }

@@ -3,7 +3,7 @@ package com.reanima.business.util;
 public class LogMessages {
 
     //field validation
-    public static final String FIELD_NOT_BLANK = "This field should not be blank.";
+    public static final String FIELD_NOT_EMPTY = "This field should not be empty.";
 
     public static final String FIELD_NOT_NULL = "This field should not be null.";
 

@@ -5,12 +5,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import java.util.List;
-
 public interface UserRepository extends JpaRepository<UserEntity, Integer> {
 
     @Query("SELECT u FROM UserEntity u WHERE u.userEmail = ?1")
-    UserEntity findById(String userEmail);
+    UserEntity findUserByEmail(String userEmail);
 
     @Query("SELECT u FROM UserEntity u WHERE u.userEmail = :userEmail")
     public UserEntity getUserByUsername(@Param("userEmail") String userEmail);
