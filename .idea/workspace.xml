@@ -5,44 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c200b0a-6a10-494a-a144-03f51d64697f" name="Changes" comment="UserDto Impl">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/reanima/business/mapper/RoleMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/reanima/business/mapper/RoleMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/reanima/business/mapper/RoleMapperImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/reanima/business/mapper/UserMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/reanima/business/mapper/UserMapperImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/reanima/business/model/RoleDto.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/reanima/business/model/UserDto.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/RecipeApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/RecipeApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/business/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/business/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/business/model/RoleDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/business/model/RoleDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/business/model/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/business/model/UserDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/business/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/business/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/business/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/business/security/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/business/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/business/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/business/service/impl/CustomUserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/business/service/impl/CustomUserDetailsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/business/repository/RoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/business/repository/RoleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/business/repository/model/RoleEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/business/repository/model/RoleEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/business/repository/model/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/business/repository/model/UserEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/business/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/business/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/business/util/LogMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/business/util/LogMessages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/logo1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/logo_nobg.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/logo_nobg.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/logo_nobg2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/ingredient/ingredient-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/ingredient/ingredient-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/recipe/recipe-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/recipe/recipe-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/list-users.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/list-users.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/registration-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/registration-form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/registration-success.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/registration-success.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/reanima/RecipeApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/reanima/RecipeApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/reanima/business/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/reanima/business/repository/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/reanima/business/security/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/reanima/business/security/WebSecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/reanima/business/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/reanima/business/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/reanima/business/service/impl/CustomUserDetailsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/reanima/business/service/impl/CustomUserDetailsServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/reanima/business/model/UserDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/reanima/business/model/UserDto.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/reanima/business/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/reanima/business/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/reanima/business/util/LogMessages.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/reanima/business/util/LogMessages.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/reanima/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/reanima/controller/LoginController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/user/list-users.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/user/list-users.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/reanima/business/mapper/IngredientMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/reanima/business/mapper/IngredientMapperImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/reanima/business/mapper/RecipeMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/reanima/business/mapper/RecipeMapperImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,9 +25,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
         <option value="HTML File" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -410,7 +383,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674120257034</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="UserDto Impl">
+      <created>1674934845543</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1674934845543</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

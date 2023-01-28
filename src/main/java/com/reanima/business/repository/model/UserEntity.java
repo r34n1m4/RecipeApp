@@ -49,4 +49,8 @@ public class UserEntity {
 
     private Set<RoleEntity> roles = new HashSet<>();
 
+    public void addRole(RoleEntity roleEntity) {
+        this.roles.add(roleEntity);
+    }
+
 }

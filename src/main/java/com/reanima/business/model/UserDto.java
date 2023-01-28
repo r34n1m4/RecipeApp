@@ -1,5 +1,6 @@
 package com.reanima.business.model;
 
+import com.reanima.business.repository.model.RoleEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -45,4 +46,8 @@ public class UserDto {
     private String userSurname;
 
     private Set<RoleDto> roles = new HashSet<>();
+
+    public void addRole(RoleDto roleDto) {
+        this.roles.add(roleDto);
+    }
 }
