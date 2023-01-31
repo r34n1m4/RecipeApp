@@ -16,7 +16,7 @@
         <h3>Add Ingredient</h3>
         <hr>
         <p class="h4 mb-4">Save Ingredient</p>
-        <form action="#" th:action="@{/saveingredient}"
+        <form action="#" th:action="@{/api/saveingredient}"
                           th:object="${ingredientEntity}"
                           method="POST">
             <!-- Hidden form field to handle updates-->
@@ -53,7 +53,7 @@
             <button type="submit" class="btn btn-lg mb-3"
                     onclick="if (!(confirm('Are you sure you want to save changes for this Ingredient?'))) return false">Save</button>
             <hr>
-            <a th:href="@{/ingredientlist}">Back to Ingredient List</a>
+            <a th:href="@{/api/ingredientlist}">Back to Ingredient List</a>
         </form>
     </div>
 </body>

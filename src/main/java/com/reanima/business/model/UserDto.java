@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.NumberFormat;
 import org.springframework.validation.annotation.Validated;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -25,6 +26,7 @@ public class UserDto {
     @NumberFormat
     private int userId;
 
+    @Email
     @NotNull(message = FIELD_NOT_NULL)
     @NotEmpty(message = FIELD_NOT_EMPTY)
     @Size(max = 50, message = FIELD_MAX_LENGTH_50)

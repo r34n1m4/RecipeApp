@@ -1,5 +1,6 @@
 package com.reanima.business.service.impl;
 
+import com.reanima.business.handler.exception.EmailExistsException;
 import com.reanima.business.mapper.UserMapper;
 import com.reanima.business.model.UserDto;
 import com.reanima.business.repository.UserRepository;
@@ -37,7 +38,16 @@ public class UserServiceImpl implements UserService {
     }
 
     public void saveUser(UserDto userDto) {
-        UserEntity userEntity = userRepository.save(userMapper.dtoToEntity(userDto));
+        UserEntity userEntity;
+        userEntity = userRepository.findUserByEmail(userDto.getUserEmail());
+        if (userEntity != null) {
+            throw new EmailExistsException("There is account already registered with email: "
+                    + userDto.getUserEmail() + "\nPlease chose another email.");
+        } else {
+
+            userEntity = userRepository.save(userMapper.dtoToEntity(userDto));
+            userEntity.setEnabled(true);
+        }
         userMapper.entityToDto(userEntity);
     }
 

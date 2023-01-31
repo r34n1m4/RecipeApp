@@ -18,10 +18,10 @@
             <img th:src="@{/logo_nobg.png}" class="imgnavbar">
             <h1 class="namenavbar"></h1>
                 <ul id="navbar">
-                    <li><a th:href="@{/recipelist}">Recipes</a></li>
-                    <li><a th:href="@{/ingredientlist}">Ingredients</a></li>
-                    <li><a th:href="@{/home}">Account: <span sec:authentication="name">Email</span></a></li>
-                    <li><a th:href="@{/logout}">Logout</a></li>
+                    <li><a th:href="@{/api/recipelist}">Recipes</a></li>
+                    <li><a th:href="@{/api/ingredientlist}">Ingredients</a></li>
+                    <li><a th:href="@{/api/home}">Account: <span sec:authentication="name">Email</span></a></li>
+                    <li><a th:href="@{/api/logout}">Logout</a></li>
                 </ul>
             </header>
         </div>
@@ -33,7 +33,7 @@
             <h3>List: Ingredients</h3>
 
             <div sec:authorize="hasAnyAuthority('ADMIN','USER')">
-                <a th:href="@{/saveingredient}"
+                <a th:href="@{/api/saveingredient}"
                 class="btn btn-lg mb-3">
                 Add Ingredient
                 </a>
@@ -70,12 +70,12 @@
                         <td th:text="${ingredientDto.cholesterol}"></td>
 
                         <td sec:authorize="hasAnyAuthority('ADMIN','USER')">
-                            <form action="#" th:action="@{/updateingredient}" method="POST">
+                            <form action="#" th:action="@{/api/updateingredient}" method="POST">
                                 <input type="hidden" name="ingredientId" th:value="${ingredientDto.ingredientId}">
                                 <button type="submit" class="btn btn-warning btn-sm mb-3">Update</button>
                             </form>
                             <div sec:authorize="hasAuthority('ADMIN')">
-                                <form action="#" th:action="@{/deleteingredient}" method="POST">
+                                <form action="#" th:action="@{/api/deleteingredient}" method="POST">
                                     <input type="hidden" name="ingredientId" th:value="${ingredientDto.ingredientId}">
                                     <button type="submit" class="btn btn-danger btn-sm mb-3"
                                             onclick="if (!(confirm('Are you sure you want to delete this Ingredient?'))) return false">Delete</button>
