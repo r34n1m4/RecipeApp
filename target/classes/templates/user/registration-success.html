@@ -17,9 +17,11 @@
     <div>
         <h3>
             <img th:src="@{/logo_nobg.png}" class="imgnavbar">
-            <span sec:authentication="name">Email</span>!
+
             <br>
             You have signed up successfully!
+            <br>
+            <span sec:authentication="name">Email</span>
         </h3>
         <h4><a th:href="@{/login}">Click here to login</a></h4>
     </div>

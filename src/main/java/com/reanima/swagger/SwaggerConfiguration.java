@@ -13,6 +13,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import static com.reanima.swagger.SwaggerTags.*;
 
+//endpoint URL: http://localhost:9191/swagger-ui/#/
 @EnableSwagger2
 @Configuration
 public class SwaggerConfiguration {

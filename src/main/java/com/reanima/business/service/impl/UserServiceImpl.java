@@ -4,10 +4,12 @@ import com.reanima.business.handler.exception.EmailExistsException;
 import com.reanima.business.mapper.UserMapper;
 import com.reanima.business.model.UserDto;
 import com.reanima.business.repository.UserRepository;
+import com.reanima.business.repository.model.RoleEntity;
 import com.reanima.business.repository.model.UserEntity;
 import com.reanima.business.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.thymeleaf.util.StringUtils;
 
 import java.util.List;
 import java.util.Optional;
@@ -40,13 +42,13 @@ public class UserServiceImpl implements UserService {
     public void saveUser(UserDto userDto) {
         UserEntity userEntity;
         userEntity = userRepository.findUserByEmail(userDto.getUserEmail());
-        if (userEntity != null) {
+        if (!StringUtils.isEmpty(userEntity.getUserEmail())) {
             throw new EmailExistsException("There is account already registered with email: "
                     + userDto.getUserEmail() + "\nPlease chose another email.");
         } else {
-
             userEntity = userRepository.save(userMapper.dtoToEntity(userDto));
             userEntity.setEnabled(true);
+
         }
         userMapper.entityToDto(userEntity);
     }
