@@ -7,6 +7,9 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -35,14 +38,14 @@ public class RecipeController {
             @ApiResponse(code = OK_CODE, message = OK_MESSAGE)
     })
     @ResponseStatus(OK)
-    @GetMapping({"/recipelist"})
+    @RequestMapping(value = "/recipelist", method = RequestMethod.GET)
     public ModelAndView getAllRecipes() {
         ModelAndView modelAndView = new ModelAndView("recipe/recipe-list");
         modelAndView.addObject("recipeEntity", recipeServiceImpl.findAllRecipes());
         return modelAndView;
     }
 
-    @ApiOperation(value = "Showing Save form for Recipe",
+    @ApiOperation(value = "Save Recipe Form",
             notes = "Returns Form for adding new Recipe")
     @ApiResponses({
             @ApiResponse(code = BAD_REQUEST_CODE, message = BAD_REQUEST_MESSAGE),
@@ -51,7 +54,7 @@ public class RecipeController {
             @ApiResponse(code = OK_CODE, message = OK_MESSAGE)
     })
     @ResponseStatus(OK)
-    @GetMapping("/saverecipe")
+    @RequestMapping(value = "/saverecipe", method = RequestMethod.GET)
     public ModelAndView saveForm() {
         ModelAndView modelAndView = new ModelAndView("recipe/recipe-form");
         RecipeDto recipeDto = new RecipeDto();
@@ -68,13 +71,32 @@ public class RecipeController {
             @ApiResponse(code = OK_CODE, message = OK_MESSAGE)
     })
     @ResponseStatus(OK)
-    @PostMapping("/saverecipe")
-    public String saveRecipe(@ModelAttribute("recipeDto") RecipeDto recipeDto) {
+    @RequestMapping(value = "/saverecipe", method = RequestMethod.POST)
+    public ResponseEntity<Void> saveRecipe(@ModelAttribute("recipeDto") RecipeDto recipeDto) {
         recipeServiceImpl.saveRecipe(recipeDto);
-        return "redirect:/recipelist";
+        return ResponseEntity.status(HttpStatus.FOUND)
+                .header(HttpHeaders.LOCATION, "/api/recipelist")
+                .build();
     }
 
-    @ApiOperation(value = "Updates existing Recipe",
+    @ApiOperation(value = "Update Recipe",
+            notes = "Updating RecipeDto, redirecting to /recipelist page")
+    @ApiResponses({
+            @ApiResponse(code = BAD_REQUEST_CODE, message = BAD_REQUEST_MESSAGE),
+            @ApiResponse(code = NOT_FOUND_CODE, message = NOT_FOUND_MESSAGE),
+            @ApiResponse(code = INTERNAL_SERVER_ERROR_CODE, message = INTERNAL_SERVER_ERROR_MESSAGE),
+            @ApiResponse(code = OK_CODE, message = OK_MESSAGE)
+    })
+    @ResponseStatus(OK)
+    @RequestMapping(value = "/updaterecipe", method = RequestMethod.POST)
+    public ResponseEntity<Void> updateRecipe(@ModelAttribute("recipeDto") RecipeDto recipeDto) {
+        recipeServiceImpl.updateRecipe(recipeDto);
+        return ResponseEntity.status(HttpStatus.FOUND)
+                .header(HttpHeaders.LOCATION, "/api/recipelist")
+                .build();
+    }
+
+    @ApiOperation(value = "Update Recipe Form",
             notes = "Updates RecipeDto, redirecting to /recipelist page")
     @ApiResponses({
             @ApiResponse(code = BAD_REQUEST_CODE, message = BAD_REQUEST_MESSAGE),
@@ -83,7 +105,7 @@ public class RecipeController {
             @ApiResponse(code = OK_CODE, message = OK_MESSAGE)
     })
     @ResponseStatus(OK)
-    @PostMapping("/updaterecipe")
+    @RequestMapping(value = "/updaterecipeform", method = RequestMethod.POST)
     public String updateRecipe(@RequestParam("recipeId") int recipeId, Model model) {
         Optional<RecipeDto> recipeDto = recipeServiceImpl.findRecipeById(recipeId);
         model.addAttribute("recipeDto", recipeDto);
@@ -99,9 +121,11 @@ public class RecipeController {
             @ApiResponse(code = OK_CODE, message = OK_MESSAGE)
     })
     @ResponseStatus(OK)
-    @PostMapping("/deleterecipe")
-    public String deleteRecipe(@RequestParam("recipeId") int recipeId) {
+    @RequestMapping(value = "/deleterecipe", method = RequestMethod.POST)
+    public ResponseEntity<Void> deleteRecipe(@RequestParam("recipeId") int recipeId) {
         recipeServiceImpl.deleteRecipeById(recipeId);
-        return "redirect:/recipelist";
+        return ResponseEntity.status(HttpStatus.FOUND)
+                .header(HttpHeaders.LOCATION, "/api/recipelist")
+                .build();
     }
 }

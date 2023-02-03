@@ -11,7 +11,9 @@ public interface RecipeService {
 
     Optional<RecipeDto> findRecipeById(int recipeId);
 
-    void saveRecipe(RecipeDto recipeDto);
+    RecipeDto saveRecipe(RecipeDto recipeDto);
 
     void deleteRecipeById(int recipeId);
+
+    RecipeDto updateRecipe(RecipeDto recipeDto);
 }

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.thymeleaf.util.StringUtils;
 
 public class CustomUserDetailsServiceImpl implements UserDetailsService {
 
@@ -16,7 +17,7 @@ public class CustomUserDetailsServiceImpl implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String userEmail) throws UsernameNotFoundException {
         UserEntity userEntity = userRepository.findUserByEmail(userEmail);
-        if (userEntity == null) {
+        if (StringUtils.isEmpty(userEntity.getUserEmail())) {
             throw new UsernameNotFoundException("User not found");
         }
 

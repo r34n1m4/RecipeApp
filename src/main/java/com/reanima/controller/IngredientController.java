@@ -7,6 +7,9 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -43,7 +46,7 @@ public class IngredientController {
         return modelAndView;
     }
 
-    @ApiOperation(value = "Showing Save form for Ingredient ",
+    @ApiOperation(value = "Save Ingredient Form",
             notes = "Returns Form for adding new Ingredient")
     @ApiResponses({
             @ApiResponse(code = BAD_REQUEST_CODE, message = BAD_REQUEST_MESSAGE),
@@ -70,9 +73,11 @@ public class IngredientController {
     })
     @ResponseStatus(OK)
     @PostMapping("/saveingredient")
-    public String saveIngredient(@ModelAttribute("ingredientEntity") IngredientDto IngredientDto) {
+    public ResponseEntity<Void> saveIngredient(@ModelAttribute("ingredientEntity") IngredientDto IngredientDto) {
         ingredientsServiceImpl.saveIngredient(IngredientDto);
-        return "redirect:/ingredientlist";
+        return ResponseEntity.status(HttpStatus.FOUND)
+                .header(HttpHeaders.LOCATION, "/api/ingredientlist")
+                .build();
     }
 
     @ApiOperation(value = "Update Ingredient",
@@ -101,8 +106,10 @@ public class IngredientController {
     })
     @ResponseStatus(OK)
     @PostMapping("/deleteingredient")
-    public String deleteIngredient(@RequestParam("ingredientId") int ingredientId) {
+    public ResponseEntity<Void> deleteIngredient(@RequestParam("ingredientId") int ingredientId) {
         ingredientsServiceImpl.deleteIngredientById(ingredientId);
-        return "redirect:/ingredientlist";
+        return ResponseEntity.status(HttpStatus.FOUND)
+                .header(HttpHeaders.LOCATION, "/api/ingredientlist")
+                .build();
     }
 }

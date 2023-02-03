@@ -59,7 +59,7 @@
                         <td th:text="${recipeDto.cuisineType}"></td>
                         <td th:text="${recipeDto.dishType}"></td>
                         <td sec:authorize="hasAnyAuthority('ADMIN','USER')">
-                            <form action="#" th:action="@{/api/updaterecipe}" method="POST">
+                            <form action="#" th:action="@{/api/updaterecipeform}" method="POST">
                                 <input type="hidden" name="recipeId" th:value="${recipeDto.recipeId}">
                                 <button type="submit" class="btn btn-warning btn-sm mb-3">Update</button>
                             </form>

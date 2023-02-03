@@ -11,12 +11,20 @@ public class LogMessages {
 
     public static final String FIELD_MAX_LENGTH_100 = "This field should not exceed 100 characters.";
 
-    //exception messages
+    //exception messages customization
     public static final String ID_NOT_FOUND = "ID not found.";
 
     public static final String ID_FOUND = "ID found";
 
     public static final String VALIDATION_FAILED = "Validation failed.";
+
+    public static final String RECIPE_WITH_ID_NOT_FOUND = "Recipe with this ID not found.";
+
+    public static final String INGREDIENT_WITH_ID_NOT_FOUND = "Ingredient with this ID not found.";
+
+    public static final String USER_WITH_ID_NOT_FOUND = "User with this ID not found.";
+
+    public static final String RECIPE_WITH_NAME_ALREADY_EXISTS = "Recipe with this name already exists.";
 
     private LogMessages() {}
 }

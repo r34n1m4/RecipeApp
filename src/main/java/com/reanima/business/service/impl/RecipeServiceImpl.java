@@ -1,5 +1,6 @@
 package com.reanima.business.service.impl;
 
+import com.reanima.business.handler.exception.RecipeException;
 import com.reanima.business.mapper.RecipeMapper;
 import com.reanima.business.model.RecipeDto;
 import com.reanima.business.repository.RecipeRepository;
@@ -11,6 +12,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+
+import static com.reanima.business.util.LogMessages.RECIPE_WITH_NAME_ALREADY_EXISTS;
 
 @Service
 public class RecipeServiceImpl implements RecipeService {
@@ -35,13 +38,29 @@ public class RecipeServiceImpl implements RecipeService {
     }
 
     @Override
-    public void saveRecipe(RecipeDto recipeDto) {
+    public RecipeDto saveRecipe(RecipeDto recipeDto) throws RecipeException{
+        if (RecipeNameMatch(recipeDto)) {
+            throw new RecipeException(RECIPE_WITH_NAME_ALREADY_EXISTS);
+        }
         RecipeEntity recipeEntity = recipeRepository.save(recipeMapper.dtoToEntity(recipeDto));
-        recipeMapper.entityToDto(recipeEntity);
+        return recipeMapper.entityToDto(recipeEntity);
+    }
+
+    @Override
+    public RecipeDto updateRecipe(RecipeDto recipeDto) {
+        RecipeEntity recipeEntity = recipeRepository.save(recipeMapper.dtoToEntity(recipeDto));
+        return recipeMapper.entityToDto(recipeEntity);
     }
 
     @Override
     public void deleteRecipeById(int recipeId) {
         recipeRepository.deleteById(recipeId);
+    }
+
+    public boolean RecipeNameMatch(RecipeDto recipeDto) {
+        return recipeRepository.findAll().stream()
+                .anyMatch(e -> e.getRecipeName()
+                        .equalsIgnoreCase(recipeDto
+                                .getRecipeName()));
     }
 }
