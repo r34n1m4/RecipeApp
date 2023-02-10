@@ -23,7 +23,7 @@ import static org.springframework.http.HttpStatus.OK;
 
 
 @Controller
-@RequestMapping("/api")
+@RequestMapping("/api/ingredient")
 @Api(tags = INGREDIENT_CONTROLLER_TAG_NAME)
 public class IngredientController {
 
@@ -55,11 +55,11 @@ public class IngredientController {
             @ApiResponse(code = OK_CODE, message = OK_MESSAGE)
     })
     @ResponseStatus(OK)
-    @GetMapping("/saveingredient")
-    public ModelAndView saveForm() {
-        ModelAndView modelAndView = new ModelAndView("ingredient/ingredient-form");
+    @RequestMapping(value = "/saveingredient", method = RequestMethod.GET)
+    public ModelAndView saveIngredientForm() {
+        ModelAndView modelAndView = new ModelAndView("ingredient/ingredient-form-save");
         IngredientDto ingredientDto = new IngredientDto();
-        modelAndView.addObject("ingredientEntity", ingredientDto);
+        modelAndView.addObject("ingredientDto", ingredientDto);
         return modelAndView;
     }
 
@@ -72,15 +72,32 @@ public class IngredientController {
             @ApiResponse(code = OK_CODE, message = OK_MESSAGE)
     })
     @ResponseStatus(OK)
-    @PostMapping("/saveingredient")
-    public ResponseEntity<Void> saveIngredient(@ModelAttribute("ingredientEntity") IngredientDto IngredientDto) {
-        ingredientsServiceImpl.saveIngredient(IngredientDto);
+    @RequestMapping(value = "/saveingredient", method = RequestMethod.POST)
+    public ResponseEntity<Void> saveIngredient(@ModelAttribute("ingredientDto") IngredientDto ingredientDto) {
+        ingredientsServiceImpl.saveIngredient(ingredientDto);
         return ResponseEntity.status(HttpStatus.FOUND)
-                .header(HttpHeaders.LOCATION, "/api/ingredientlist")
+                .header(HttpHeaders.LOCATION, "/api/ingredient/ingredientlist")
                 .build();
     }
 
     @ApiOperation(value = "Update Ingredient",
+            notes = "Updating IngredientDto, redirecting to /ingredientlist page")
+    @ApiResponses({
+            @ApiResponse(code = BAD_REQUEST_CODE, message = BAD_REQUEST_MESSAGE),
+            @ApiResponse(code = NOT_FOUND_CODE, message = NOT_FOUND_MESSAGE),
+            @ApiResponse(code = INTERNAL_SERVER_ERROR_CODE, message = INTERNAL_SERVER_ERROR_MESSAGE),
+            @ApiResponse(code = OK_CODE, message = OK_MESSAGE)
+    })
+    @ResponseStatus(OK)
+    @RequestMapping(value = "/updateingredient", method = RequestMethod.POST)
+    public ResponseEntity<Void> updateIngredient(@ModelAttribute("ingredientDto") IngredientDto ingredientDto) {
+        ingredientsServiceImpl.updateIngredient(ingredientDto);
+        return ResponseEntity.status(HttpStatus.FOUND)
+                .header(HttpHeaders.LOCATION, "/api/ingredient/ingredientlist")
+                .build();
+    }
+
+    @ApiOperation(value = "Update Ingredient Form",
             notes = "Updates IngredientDto, redirecting to /ingredientlist page")
     @ApiResponses({
             @ApiResponse(code = BAD_REQUEST_CODE, message = BAD_REQUEST_MESSAGE),
@@ -89,11 +106,11 @@ public class IngredientController {
             @ApiResponse(code = OK_CODE, message = OK_MESSAGE)
     })
     @ResponseStatus(OK)
-    @PostMapping("/updateingredient")
-    public String updateIngredient(@RequestParam("ingredientId") int ingredientId, Model model) {
+    @RequestMapping(value = "/updateingredientform", method = RequestMethod.POST)
+    public String updateIngredientForm(@RequestParam("ingredientId") int ingredientId, Model model) {
         Optional<IngredientDto> ingredientDto = ingredientsServiceImpl.findIngredientById(ingredientId);
-        model.addAttribute("ingredientEntity", ingredientDto);
-        return "ingredient/ingredient-form";
+        model.addAttribute("ingredientDto", ingredientDto);
+        return "ingredient/ingredient-form-update";
     }
 
     @ApiOperation(value = "Delete Ingredient",
@@ -109,7 +126,7 @@ public class IngredientController {
     public ResponseEntity<Void> deleteIngredient(@RequestParam("ingredientId") int ingredientId) {
         ingredientsServiceImpl.deleteIngredientById(ingredientId);
         return ResponseEntity.status(HttpStatus.FOUND)
-                .header(HttpHeaders.LOCATION, "/api/ingredientlist")
+                .header(HttpHeaders.LOCATION, "/api/ingredient/ingredientlist")
                 .build();
     }
 }

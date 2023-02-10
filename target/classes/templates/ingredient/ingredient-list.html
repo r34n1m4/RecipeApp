@@ -15,13 +15,20 @@
     <body>
         <div>
             <header>
-            <img th:src="@{/logo_nobg.png}" class="imgnavbar">
+                <a onclick th:href="@{/api/user/home}"><img th:src="@{/logo_nobg.png}" class="imgnavbar" ></a>
             <h1 class="namenavbar"></h1>
                 <ul id="navbar">
-                    <li><a th:href="@{/api/recipelist}">Recipes</a></li>
-                    <li><a th:href="@{/api/ingredientlist}">Ingredients</a></li>
-                    <li><a th:href="@{/api/home}">Account: <span sec:authentication="name">Email</span></a></li>
-                    <li><a th:href="@{/api/logout}">Logout</a></li>
+                    <li><a th:href="@{/api/recipe/recipelist}">Recipes</a></li>
+                    <li><a th:href="@{/api/ingredient/ingredientlist}">Ingredients</a></li>
+                    <li><a th:href="@{/api/user/home}">Account: <span sec:authentication="name">Email</span></a></li>
+                    <li>
+                        <div sec:authorize="isAuthenticated()">
+                            <a href="javascript: document.logoutForm.submit()">Sign out</a>
+                            <form name="logoutForm" th:action="@{/api/user/logout}" method="post" th:hidden="true">
+                                <input hidden type="submit" value="Sign Out" />
+                            </form>
+                        </div>
+                    </li>
                 </ul>
             </header>
         </div>
@@ -31,9 +38,10 @@
         <div class="container">
 
             <h3>List: Ingredients</h3>
+            <h4>Nutrition for 1g of product.</h4>
 
             <div sec:authorize="hasAnyAuthority('ADMIN','USER')">
-                <a th:href="@{/api/saveingredient}"
+                <a th:href="@{/api/ingredient/saveingredient}"
                 class="btn btn-lg mb-3">
                 Add Ingredient
                 </a>
@@ -70,12 +78,12 @@
                         <td th:text="${ingredientDto.cholesterol}"></td>
 
                         <td sec:authorize="hasAnyAuthority('ADMIN','USER')">
-                            <form action="#" th:action="@{/api/updateingredient}" method="POST">
+                            <form action="#" th:action="@{/api/ingredient/updateingredientform}" method="POST">
                                 <input type="hidden" name="ingredientId" th:value="${ingredientDto.ingredientId}">
                                 <button type="submit" class="btn btn-warning btn-sm mb-3">Update</button>
                             </form>
                             <div sec:authorize="hasAuthority('ADMIN')">
-                                <form action="#" th:action="@{/api/deleteingredient}" method="POST">
+                                <form action="#" th:action="@{/api/ingredient/deleteingredient}" method="POST">
                                     <input type="hidden" name="ingredientId" th:value="${ingredientDto.ingredientId}">
                                     <button type="submit" class="btn btn-danger btn-sm mb-3"
                                             onclick="if (!(confirm('Are you sure you want to delete this Ingredient?'))) return false">Delete</button>

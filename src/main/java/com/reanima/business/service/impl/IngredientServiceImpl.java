@@ -1,13 +1,10 @@
 package com.reanima.business.service.impl;
 
+import com.reanima.business.handler.exception.IngredientException;
 import com.reanima.business.mapper.IngredientMapper;
-import com.reanima.business.mapper.RecipeMapper;
 import com.reanima.business.model.IngredientDto;
-import com.reanima.business.model.RecipeDto;
 import com.reanima.business.repository.IngredientRepository;
-import com.reanima.business.repository.RecipeRepository;
 import com.reanima.business.repository.model.IngredientEntity;
-import com.reanima.business.repository.model.RecipeEntity;
 import com.reanima.business.service.IngredientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,6 +12,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+
+import static com.reanima.business.util.LogMessages.INGREDIENT_WITH_NAME_ALREADY_EXISTS;
 
 @Service
 public class IngredientServiceImpl implements IngredientService {
@@ -39,7 +38,16 @@ public class IngredientServiceImpl implements IngredientService {
     }
 
     @Override
-    public void saveIngredient(IngredientDto ingredientDto) {
+    public void saveIngredient(IngredientDto ingredientDto) throws IngredientException {
+        if (IngredientNameMatch(ingredientDto)) {
+            throw new IngredientException(INGREDIENT_WITH_NAME_ALREADY_EXISTS);
+        }
+        IngredientEntity ingredientEntity = ingredientRepository.save(ingredientMapper.dtoToEntity(ingredientDto));
+        ingredientMapper.entityToDto(ingredientEntity);
+    }
+
+    @Override
+    public void updateIngredient(IngredientDto ingredientDto) {
         IngredientEntity ingredientEntity = ingredientRepository.save(ingredientMapper.dtoToEntity(ingredientDto));
         ingredientMapper.entityToDto(ingredientEntity);
     }
@@ -47,5 +55,12 @@ public class IngredientServiceImpl implements IngredientService {
     @Override
     public void deleteIngredientById(int ingredientId) {
         ingredientRepository.deleteById(ingredientId);
+    }
+
+    public boolean IngredientNameMatch(IngredientDto ingredientDto) {
+        return ingredientRepository.findAll().stream()
+                .anyMatch(e -> e.getIngredientName()
+                        .equalsIgnoreCase(ingredientDto
+                                .getIngredientName()));
     }
 }

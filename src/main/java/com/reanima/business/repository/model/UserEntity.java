@@ -2,6 +2,7 @@ package com.reanima.business.repository.model;
 
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -27,7 +28,7 @@ public class UserEntity {
     @Column(name = "user_email", nullable = false, unique = true)
     private String userEmail;
 
-    @Column(name = "user_password", nullable = false)
+    @Column(name = "user_password", nullable = false, updatable = false)
     private String userPassword;
 
     @Column(name = "user_name")
@@ -40,8 +41,12 @@ public class UserEntity {
     private boolean enabled = true;
 
     @CreationTimestamp
-    @Column(name = "user_created")
+    @Column(name = "user_created", nullable = false, updatable = false)
     private LocalDateTime userCreated;
+
+    @UpdateTimestamp
+    @Column(name = "user_updated")
+    private LocalDateTime userUpdated;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "users_roles",

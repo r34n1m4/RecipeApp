@@ -16,14 +16,17 @@
 <div class="container text-center">
     <div>
         <h3>
-            <img th:src="@{/logo_nobg.png}" class="imgnavbar">
+            <a onclick th:href="@{/api/user/home}"><img th:src="@{/logo_nobg.png}" class="imgnavbar" ></a>
 
             <br>
             You have signed up successfully!
             <br>
             <span sec:authentication="name">Email</span>
         </h3>
-        <h4><a th:href="@{/login}">Click here to login</a></h4>
+        <h4>
+            <a th:href="@{/api/user/login}">Click here to login</a>
+            <button onclick="@{/api/user/login}">Login</button>
+        </h4>
     </div>
 </div>
 </body>

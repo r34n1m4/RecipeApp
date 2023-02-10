@@ -11,50 +11,50 @@
 </head>
 <body>
     <div>
-        <div class="container text-center">
-            <h2>Error template.
-                <br>
-                <a th:text = "${message}"></a>
-                <br>
-                <a th:href="@{/api/home}">Back to Home Page</a>
-            </h2>
-        </div>
-<!-- FULL ERROR LOG -->
-<!--        <div class="container left">-->
-<!--            <h3>My Thymeleaf Error Page</h3>-->
-<!--            <table class="table table-bordered table-striped">-->
-<!--                <tr>-->
-<!--                    <td>Date</td>-->
-<!--                    <td th:text="${timestamp}"/>-->
-<!--                </tr>-->
-<!--                <tr>-->
-<!--                    <td>Path</td>-->
-<!--                    <td th:text="${path}"/>-->
-<!--                </tr>-->
-<!--                <tr>-->
-<!--                    <td>Error</td>-->
-<!--                    <td th:text="${error}"/>-->
-<!--                </tr>-->
-<!--                <tr>-->
-<!--                    <td>Status</td>-->
-<!--                    <td th:text="${status}"/>-->
-<!--                </tr>-->
-<!--                <tr>-->
-<!--                    <td>Message</td>-->
-<!--                    <td th:text="${message}"/>-->
-<!--                </tr>-->
-<!--                <tr>-->
-<!--                    <td>Exception</td>-->
-<!--                    <td th:text="${exception}"/>-->
-<!--                </tr>-->
-<!--                <tr>-->
-<!--                    <td>Trace</td>-->
-<!--                    <td>-->
-<!--                        <pre th:text="${trace}"/>-->
-<!--                    </td>-->
-<!--                </tr>-->
-<!--            </table>-->
+<!--        <div class="container text-center">-->
+<!--            <h2>So sorry to inform you, but we faced an error:-->
+<!--                <br>-->
+<!--                <a th:text = "${message}"></a>-->
+<!--                <br>-->
+<!--                <button onclick="history.back()">Back</button>-->
+<!--            </h2>-->
 <!--        </div>-->
+<!-- FULL ERROR LOG -->
+        <div class="container left">
+            <h3>Thymeleaf Error Page</h3>
+            <table class="table table-bordered table-striped">
+                <tr>
+                    <td>Date</td>
+                    <td th:text="${timestamp}"/>
+                </tr>
+                <tr>
+                    <td>Path</td>
+                    <td th:text="${path}"/>
+                </tr>
+                <tr>
+                    <td>Error</td>
+                    <td th:text="${error}"/>
+                </tr>
+                <tr>
+                    <td>Status</td>
+                    <td th:text="${status}"/>
+                </tr>
+                <tr>
+                    <td>Message</td>
+                    <td th:text="${message}"/>
+                </tr>
+                <tr>
+                    <td>Exception</td>
+                    <td th:text="${exception}"/>
+                </tr>
+                <tr>
+                    <td>Trace</td>
+                    <td>
+                        <pre th:text="${trace}"/>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
 </body>
 </html>

@@ -47,9 +47,9 @@ public class RecipeServiceImpl implements RecipeService {
     }
 
     @Override
-    public RecipeDto updateRecipe(RecipeDto recipeDto) {
+    public void updateRecipe(RecipeDto recipeDto) {
         RecipeEntity recipeEntity = recipeRepository.save(recipeMapper.dtoToEntity(recipeDto));
-        return recipeMapper.entityToDto(recipeEntity);
+        recipeMapper.entityToDto(recipeEntity);
     }
 
     @Override

@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Form: Add Ingredient</title>
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+          crossorigin="anonymous" />
+    <link th:href = "@{/stylesheet.css}" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h3>Add Ingredient</h3>
+        <hr>
+        <p class="h4 mb-4">Save Ingredient</p>
+        <form action="#" th:action="@{/api/ingredient/saveingredient}"
+                          th:object="${ingredientDto}"
+                          method="POST">
+            <!-- Hidden form field to handle updates-->
+            <input type="hidden" th:field="*{ingredientId}">
+
+            <input type="text" name="ingredientName" th:field="*{ingredientName}"
+                   class="form-control mb-4 col-4"
+                   placeholder="Ingredient" required>
+            <input type="text" th:field="*{ingredientDescription}"
+                   class="form-control mb-4 col-4"
+                   placeholder="Description">
+            <input type="text" th:field="*{ingredientType}"
+                   class="form-control mb-4 col-4"
+                   placeholder="Type">
+            <input type="number" th:field="*{calories}"
+                   class="form-control mb-4 col-4"
+                   placeholder="Calories">
+            <input type="number" th:field="*{carbohydrates}"
+                   class="form-control mb-4 col-4"
+                   placeholder="Carbohydrates">
+            <input type="number" th:field="*{fat}"
+                   class="form-control mb-4 col-4"
+                   placeholder="Fat">
+            <input type="number" th:field="*{protein}"
+                   class="form-control mb-4 col-4"
+                   placeholder="Protein">
+            <input type="number" th:field="*{water}"
+                   class="form-control mb-4 col-4"
+                   placeholder="Water">
+            <input type="number" th:field="*{cholesterol}"
+                   class="form-control mb-4 col-4"
+                   placeholder="Cholesterol">
+
+            <button type="submit" class="btn btn-lg mb-3"
+                    onclick="if (!(confirm('Are you sure you want to save changes for this Ingredient?'))) return false">Save</button>
+            <hr>
+            <button onclick="history.back()">Back</button>
+        </form>
+    </div>
+</body>
+
+</html>

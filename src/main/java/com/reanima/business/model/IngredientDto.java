@@ -6,12 +6,12 @@ import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.NumberFormat;
 import org.springframework.validation.annotation.Validated;
 
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 
-import static com.reanima.business.util.LogMessages.FIELD_MAX_LENGTH_50;
-import static com.reanima.business.util.LogMessages.FIELD_NOT_NULL;
+import static com.reanima.business.util.LogMessages.*;
 
 @Data
 @NoArgsConstructor
@@ -22,7 +22,7 @@ public class IngredientDto {
     @NumberFormat
     private int ingredientId;
 
-    @NotNull(message = FIELD_NOT_NULL)
+    @NotBlank(message = FIELD_NOT_BLANK)
     @Size(max = 50, message = FIELD_MAX_LENGTH_50)
     private String ingredientName;
 

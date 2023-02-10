@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
-    <title>Form: Add Recipe</title>
+    <title>Form: Update Recipe</title>
 
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
@@ -13,11 +13,11 @@
 
 <body>
     <div class="container">
-        <h3>Add Recipe</h3>
+        <h3>Update Recipe</h3>
         <hr>
 
-        <p class="h4 mb-4">Save Recipe</p>
-        <form action="#" th:action="@{/api/updaterecipe}"
+        <p class="h4 mb-4">Update Recipe</p>
+        <form action="#" th:action="@{/api/recipe/updaterecipe}"
                           th:object="${recipeDto}"
                           method="POST">
             <!-- Hidden form field to handle updates-->
@@ -25,10 +25,10 @@
 
             <input type="text" th:field="*{recipeName}"
                    class="form-control mb-4 col-4"
-                   placeholder="Recipe">
+                   placeholder="Recipe" required>
             <input type="text" th:field="*{recipeDescription}"
                    class="form-control mb-4 col-4"
-                   placeholder="Description">
+                   placeholder="Description" required>
             <input type="text" th:field="*{recipePreparation}"
                    class="form-control mb-4 col-4"
                    placeholder="Preparation">
@@ -39,9 +39,9 @@
                    class="form-control mb-4 col-4"
                    placeholder="Dish Type">
             <button type="submit" class="btn btn-lg mb-3"
-                    onclick="if (!(confirm('Are you sure you want to save changes for this Recipe?'))) return false">Save</button>
+                    onclick="if (!(confirm('Are you sure you want to save changes for this Recipe?'))) return false">Update</button>
             <hr>
-            <a th:href="@{/api/recipelist}">Back to Recipe List</a>
+            <button onclick="history.back()">Back</button>
         </form>
     </div>
 </body>

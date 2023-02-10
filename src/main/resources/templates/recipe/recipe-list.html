@@ -15,13 +15,20 @@
     <body>
         <div>
             <header>
-            <img th:src="@{/logo_nobg.png}" class="imgnavbar">
+                <a onclick th:href="@{/api/user/home}"><img th:src="@{/logo_nobg.png}" class="imgnavbar" ></a>
             <h1 class="namenavbar"></h1>
                 <ul id="navbar">
-                    <li><a th:href="@{/api/recipelist}">Recipes</a></li>
-                    <li><a th:href="@{/api/ingredientlist}">Ingredients</a></li>
-                    <li><a th:href="@{/api/home}">Account: <span sec:authentication="name">Email</span></a></li>
-                    <li><a th:href="@{/api/logout}">Logout</a></li>
+                    <li><a th:href="@{/api/recipe/recipelist}">Recipes</a></li>
+                    <li><a th:href="@{/api/ingredient/ingredientlist}">Ingredients</a></li>
+                    <li><a th:href="@{/api/user/home}">Account: <span sec:authentication="name">Email</span></a></li>
+                    <li>
+                        <div sec:authorize="isAuthenticated()">
+                            <a href="javascript: document.logoutForm.submit()">Sign out</a>
+                            <form name="logoutForm" th:action="@{/api/user/logout}" method="post" th:hidden="true">
+                                <input hidden type="submit" value="Sign Out" />
+                            </form>
+                        </div>
+                    </li>
                 </ul>
             </header>
         </div>
@@ -32,17 +39,15 @@
 
             <h3>List: Recipes</h3>
             <div sec:authorize="hasAnyAuthority('ADMIN','USER')">
-                <a th:href="@{/api/saverecipe}"
+                <a th:href="@{/api/recipe/saverecipe}"
                    class="btn btn-lg mb-3">
                     Add Recipe
                 </a>
             </div>
 
             <table class="table table-bordered table-striped">
-
                 <thead>
                     <tr>
-
                         <th>Recipe</th>
                         <th>Description</th>
                         <th>Preparation</th>
@@ -59,12 +64,12 @@
                         <td th:text="${recipeDto.cuisineType}"></td>
                         <td th:text="${recipeDto.dishType}"></td>
                         <td sec:authorize="hasAnyAuthority('ADMIN','USER')">
-                            <form action="#" th:action="@{/api/updaterecipeform}" method="POST">
+                            <form action="#" th:action="@{/api/recipe/updaterecipeform}" method="POST">
                                 <input type="hidden" name="recipeId" th:value="${recipeDto.recipeId}">
                                 <button type="submit" class="btn btn-warning btn-sm mb-3">Update</button>
                             </form>
                             <div sec:authorize="hasAuthority('ADMIN')">
-                                <form action="#" th:action="@{/api/deleterecipe}" method="POST">
+                                <form action="#" th:action="@{/api/recipe/deleterecipe}" method="POST">
                                     <input type="hidden" name="recipeId" th:value="${recipeDto.recipeId}">
                                     <button type="submit" class="btn btn-danger btn-sm mb-3"
                                             onclick="if (!(confirm('Are you sure you want to delete this Recipe?'))) return false">Delete</button>

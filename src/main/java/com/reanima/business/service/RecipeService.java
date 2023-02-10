@@ -15,5 +15,5 @@ public interface RecipeService {
 
     void deleteRecipeById(int recipeId);
 
-    RecipeDto updateRecipe(RecipeDto recipeDto);
+    void updateRecipe(RecipeDto recipeDto);
 }

@@ -14,7 +14,6 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -43,25 +42,25 @@ public class RecipeServiceImplTest {
 
         recipeDto = new RecipeDto(
                 VALID_ID,
-                "Chicken curry",
-                "Spicy as hell",
-                "Prepare",
-                "Asian",
-                "Spicy",
+                RECIPE_NAME,
+                RECIPE_DESCRIPTION,
+                RECIPE_PREPARATION,
+                CUISINE_TYPE,
+                DISH_TYPE,
                 LOCAL_DATE_TIME
         );
 
         recipeEntity = new RecipeEntity(
                 VALID_ID,
-                "Chicken curry",
-                "Spicy as hell",
-                "Prepare",
-                "Asian",
-                "Spicy",
+                RECIPE_NAME,
+                RECIPE_DESCRIPTION,
+                RECIPE_PREPARATION,
+                CUISINE_TYPE,
+                DISH_TYPE,
                 LOCAL_DATE_TIME
         );
 
-        recipeEntityList = new ArrayList<>(Arrays.asList(recipeEntity));
+        recipeEntityList = new ArrayList<>(List.of(recipeEntity));
     }
 
     @Test
@@ -89,7 +88,7 @@ public class RecipeServiceImplTest {
         List<RecipeDto> recipeDtoList = recipeService.findAllRecipes();
         assertEquals(1, recipeDtoList.size());
         assertEquals(1, recipeDtoList.get(0).getRecipeId());
-        assertEquals("Chicken curry", recipeDtoList.get(0).getRecipeName());
+        assertEquals(RECIPE_NAME, recipeDtoList.get(0).getRecipeName());
     }
 
     @Test

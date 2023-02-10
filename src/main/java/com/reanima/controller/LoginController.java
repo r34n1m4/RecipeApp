@@ -1,5 +1,6 @@
 package com.reanima.controller;
 
+import com.reanima.business.model.RecipeDto;
 import com.reanima.business.model.UserDto;
 import com.reanima.business.service.impl.UserServiceImpl;
 import io.swagger.annotations.Api;
@@ -7,12 +8,18 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
+
+import java.util.Optional;
 
 import static com.reanima.swagger.ApiResponseMessages.*;
 import static com.reanima.swagger.ApiResponseMessages.OK_MESSAGE;
@@ -20,7 +27,7 @@ import static com.reanima.swagger.SwaggerTags.LOGIN_CONTROLLER_TAG_NAME;
 import static org.springframework.http.HttpStatus.OK;
 
 @Controller
-@RequestMapping("/api")
+@RequestMapping("/api/user")
 @Api(tags = LOGIN_CONTROLLER_TAG_NAME)
 public class LoginController {
 
@@ -37,8 +44,22 @@ public class LoginController {
     })
     @ResponseStatus(OK)
     @GetMapping("/home")
-    public String login() {
+    public String home() {
         return "home";
+    }
+
+    @ApiOperation(value = "Login Page",
+            notes = "Login Page redirects to Home Page")
+    @ApiResponses({
+            @ApiResponse(code = BAD_REQUEST_CODE, message = BAD_REQUEST_MESSAGE),
+            @ApiResponse(code = NOT_FOUND_CODE, message = NOT_FOUND_MESSAGE),
+            @ApiResponse(code = INTERNAL_SERVER_ERROR_CODE, message = INTERNAL_SERVER_ERROR_MESSAGE),
+            @ApiResponse(code = OK_CODE, message = OK_MESSAGE)
+    })
+    @ResponseStatus(OK)
+    @GetMapping("/login")
+    public String login() {
+        return "user/login";
     }
 
     @ApiOperation(value = "Logout Page",
@@ -104,6 +125,39 @@ public class LoginController {
         return "user/registration-success";
     }
 
+    @ApiOperation(value = "Update User",
+            notes = "Updating UserDto, redirecting to /userlist page")
+    @ApiResponses({
+            @ApiResponse(code = BAD_REQUEST_CODE, message = BAD_REQUEST_MESSAGE),
+            @ApiResponse(code = NOT_FOUND_CODE, message = NOT_FOUND_MESSAGE),
+            @ApiResponse(code = INTERNAL_SERVER_ERROR_CODE, message = INTERNAL_SERVER_ERROR_MESSAGE),
+            @ApiResponse(code = OK_CODE, message = OK_MESSAGE)
+    })
+    @ResponseStatus(OK)
+    @RequestMapping(value = "/updateuser", method = RequestMethod.POST)
+    public ResponseEntity<Void> updateUser(@ModelAttribute("userDto") UserDto userDto) {
+        userServiceImpl.updateUser(userDto);
+        return ResponseEntity.status(HttpStatus.FOUND)
+                .header(HttpHeaders.LOCATION, "/api/user/userlist")
+                .build();
+    }
+
+    @ApiOperation(value = "Update User Form",
+            notes = "Updates UserDto, redirecting to /userlist page")
+    @ApiResponses({
+            @ApiResponse(code = BAD_REQUEST_CODE, message = BAD_REQUEST_MESSAGE),
+            @ApiResponse(code = NOT_FOUND_CODE, message = NOT_FOUND_MESSAGE),
+            @ApiResponse(code = INTERNAL_SERVER_ERROR_CODE, message = INTERNAL_SERVER_ERROR_MESSAGE),
+            @ApiResponse(code = OK_CODE, message = OK_MESSAGE)
+    })
+    @ResponseStatus(OK)
+    @RequestMapping(value = "/updateuserform", method = RequestMethod.POST)
+    public String updateUserForm(@RequestParam("userId") int userId, Model model) {
+        Optional<UserDto> userDto = userServiceImpl.findUserById(userId);
+        model.addAttribute("userDto", userDto);
+        return "user/user-form-update";
+    }
+
     @ApiOperation(value = "List User",
             notes = "Find all Users, authorized access only for ADMIN")
     @ApiResponses({
@@ -113,11 +167,28 @@ public class LoginController {
             @ApiResponse(code = OK_CODE, message = OK_MESSAGE)
     })
     @ResponseStatus(OK)
-    @GetMapping("/list-users")
+    @GetMapping("/userlist")
     public ModelAndView getAllUsers() {
-        ModelAndView modelAndView = new ModelAndView("user/list-users");
-        modelAndView.addObject("usersList", userServiceImpl.findAllUsers());
+        ModelAndView modelAndView = new ModelAndView("user/user-list");
+        modelAndView.addObject("userList", userServiceImpl.findAllUsers());
         return modelAndView;
+    }
+
+    @ApiOperation(value = "Delete User",
+            notes = "Deletes UserDto, redirecting to /userlist page")
+    @ApiResponses({
+            @ApiResponse(code = BAD_REQUEST_CODE, message = BAD_REQUEST_MESSAGE),
+            @ApiResponse(code = NOT_FOUND_CODE, message = NOT_FOUND_MESSAGE),
+            @ApiResponse(code = INTERNAL_SERVER_ERROR_CODE, message = INTERNAL_SERVER_ERROR_MESSAGE),
+            @ApiResponse(code = OK_CODE, message = OK_MESSAGE)
+    })
+    @ResponseStatus(OK)
+    @RequestMapping(value = "/deleteuser", method = RequestMethod.POST)
+    public ResponseEntity<Void> deleteUser(@RequestParam("userId") int userId) {
+        userServiceImpl.deleteUserById(userId);
+        return ResponseEntity.status(HttpStatus.FOUND)
+                .header(HttpHeaders.LOCATION, "/api/user/userlist")
+                .build();
     }
 
 

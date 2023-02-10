@@ -22,7 +22,7 @@ import static com.reanima.swagger.SwaggerTags.RECIPE_CONTROLLER_TAG_NAME;
 import static org.springframework.http.HttpStatus.OK;
 
 @Controller
-@RequestMapping("/api")
+@RequestMapping("/api/recipe")
 @Api(tags = RECIPE_CONTROLLER_TAG_NAME)
 public class RecipeController {
 
@@ -55,8 +55,8 @@ public class RecipeController {
     })
     @ResponseStatus(OK)
     @RequestMapping(value = "/saverecipe", method = RequestMethod.GET)
-    public ModelAndView saveForm() {
-        ModelAndView modelAndView = new ModelAndView("recipe/recipe-form");
+    public ModelAndView saveRecipeForm() {
+        ModelAndView modelAndView = new ModelAndView("recipe/recipe-form-save");
         RecipeDto recipeDto = new RecipeDto();
         modelAndView.addObject("recipeDto", recipeDto);
         return modelAndView;
@@ -75,7 +75,7 @@ public class RecipeController {
     public ResponseEntity<Void> saveRecipe(@ModelAttribute("recipeDto") RecipeDto recipeDto) {
         recipeServiceImpl.saveRecipe(recipeDto);
         return ResponseEntity.status(HttpStatus.FOUND)
-                .header(HttpHeaders.LOCATION, "/api/recipelist")
+                .header(HttpHeaders.LOCATION, "/api/recipe/recipelist")
                 .build();
     }
 
@@ -92,7 +92,7 @@ public class RecipeController {
     public ResponseEntity<Void> updateRecipe(@ModelAttribute("recipeDto") RecipeDto recipeDto) {
         recipeServiceImpl.updateRecipe(recipeDto);
         return ResponseEntity.status(HttpStatus.FOUND)
-                .header(HttpHeaders.LOCATION, "/api/recipelist")
+                .header(HttpHeaders.LOCATION, "/api/recipe/recipelist")
                 .build();
     }
 
@@ -106,10 +106,10 @@ public class RecipeController {
     })
     @ResponseStatus(OK)
     @RequestMapping(value = "/updaterecipeform", method = RequestMethod.POST)
-    public String updateRecipe(@RequestParam("recipeId") int recipeId, Model model) {
+    public String updateRecipeForm(@RequestParam("recipeId") int recipeId, Model model) {
         Optional<RecipeDto> recipeDto = recipeServiceImpl.findRecipeById(recipeId);
         model.addAttribute("recipeDto", recipeDto);
-        return "recipe/recipe-form";
+        return "recipe/recipe-form-update";
     }
 
     @ApiOperation(value = "Delete Recipe",
@@ -125,7 +125,7 @@ public class RecipeController {
     public ResponseEntity<Void> deleteRecipe(@RequestParam("recipeId") int recipeId) {
         recipeServiceImpl.deleteRecipeById(recipeId);
         return ResponseEntity.status(HttpStatus.FOUND)
-                .header(HttpHeaders.LOCATION, "/api/recipelist")
+                .header(HttpHeaders.LOCATION, "/api/recipe/recipelist")
                 .build();
     }
 }

@@ -4,6 +4,7 @@ import com.reanima.business.handler.exception.EmailExistsException;
 import com.reanima.business.mapper.UserMapper;
 import com.reanima.business.model.UserDto;
 import com.reanima.business.repository.UserRepository;
+import com.reanima.business.repository.model.RecipeEntity;
 import com.reanima.business.repository.model.RoleEntity;
 import com.reanima.business.repository.model.UserEntity;
 import com.reanima.business.service.UserService;
@@ -33,7 +34,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Optional<UserDto> findById(int userId) {
+    public Optional<UserDto> findUserById(int userId) {
 
         Optional<UserEntity> userEntity = userRepository.findById(userId);
         return userEntity.map(userMapper::entityToDto);
@@ -42,7 +43,7 @@ public class UserServiceImpl implements UserService {
     public void saveUser(UserDto userDto) {
         UserEntity userEntity;
         userEntity = userRepository.findUserByEmail(userDto.getUserEmail());
-        if (!StringUtils.isEmpty(userEntity.getUserEmail())) {
+        if (userEntity != null) {
             throw new EmailExistsException("There is account already registered with email: "
                     + userDto.getUserEmail() + "\nPlease chose another email.");
         } else {
@@ -54,7 +55,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void deleteById(int userId) {
+    public void updateUser(UserDto userDto) {
+        UserEntity userEntity = userRepository.save(userMapper.dtoToEntity(userDto));
+        userMapper.entityToDto(userEntity);
+    }
+
+    @Override
+    public void deleteUserById(int userId) {
         userRepository.deleteById(userId);
     }
 }

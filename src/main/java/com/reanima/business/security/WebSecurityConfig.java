@@ -47,22 +47,29 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
+        http
+                .authorizeRequests()
                 .antMatchers("/api").hasAnyAuthority("ADMIN", "USER")
-                .antMatchers("/api/list-users").hasAuthority("ADMIN")
-                .antMatchers("/api/saverecipe").hasAnyAuthority("ADMIN", "USER")
-                .antMatchers("/api/updaterecipe").hasAnyAuthority("ADMIN", "USER")
-                .antMatchers("/api/deleterecipe").hasAuthority("ADMIN")
-                .antMatchers("/api/saveingredient").hasAnyAuthority("ADMIN", "USER")
-                .antMatchers("/api/updateingredient").hasAnyAuthority("ADMIN", "USER")
-                .antMatchers("/api/deleteingredient").hasAuthority("ADMIN")
+                .antMatchers("/api/user/userlist").hasAuthority("ADMIN")
+                .antMatchers("/api/recipe/saverecipe").hasAnyAuthority("ADMIN", "USER")
+                .antMatchers("/api/recipe/updaterecipe").hasAnyAuthority("ADMIN", "USER")
+                .antMatchers("/api/recipe/deleterecipe").hasAuthority("ADMIN")
+                .antMatchers("/api/ingredient/saveingredient").hasAnyAuthority("ADMIN", "USER")
+                .antMatchers("/api/ingredient/updateingredient").hasAnyAuthority("ADMIN", "USER")
+                .antMatchers("/api/ingredient/deleteingredient").hasAuthority("ADMIN")
                 .anyRequest().permitAll()
                 .and()
-                .formLogin().loginProcessingUrl("/login")
+                .formLogin().loginPage("/api/user/login")
+                .usernameParameter("userEmail")
+                .passwordParameter("userPassword")
                 .permitAll()
                 .and()
-                .logout().permitAll()
+                .logout()
+                .logoutUrl("/api/user/logout")
+                .logoutSuccessUrl("/api/user/home")
+                .clearAuthentication(true)
+                .permitAll()
                 .and()
-                .exceptionHandling().accessDeniedPage("/restricted_access");
+                .exceptionHandling().accessDeniedPage("/api/user/restricted_access");
     }
 }

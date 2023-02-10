@@ -9,10 +9,12 @@ public interface UserService {
 
     List<UserDto> findAllUsers();
 
-    Optional<UserDto> findById(int userId);
+    Optional<UserDto> findUserById(int userId);
 
     void saveUser(UserDto userDto);
 
-    void deleteById(int userId);
+    void updateUser(UserDto userDto);
+
+    void deleteUserById(int userId);
 
 }

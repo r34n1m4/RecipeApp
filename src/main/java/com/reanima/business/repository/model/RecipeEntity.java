@@ -47,6 +47,7 @@ public class RecipeEntity {
 
     @CreationTimestamp
     @Column(name = "recipe_created")
+    @ApiModelProperty(notes = "Recipe timestamp of creation")
     private LocalDateTime recipeCreated;
 
 }

@@ -17,7 +17,7 @@
         <hr>
 
         <p class="h4 mb-4">Save Recipe</p>
-        <form action="#" th:action="@{/api/updaterecipe}"
+        <form action="#" th:action="@{/api/recipe/saverecipe}"
                           th:object="${recipeDto}"
                           method="POST">
             <!-- Hidden form field to handle updates-->
@@ -25,10 +25,10 @@
 
             <input type="text" th:field="*{recipeName}"
                    class="form-control mb-4 col-4"
-                   placeholder="Recipe">
+                   placeholder="Recipe" required>
             <input type="text" th:field="*{recipeDescription}"
                    class="form-control mb-4 col-4"
-                   placeholder="Description">
+                   placeholder="Description" required>
             <input type="text" th:field="*{recipePreparation}"
                    class="form-control mb-4 col-4"
                    placeholder="Preparation">
@@ -41,7 +41,7 @@
             <button type="submit" class="btn btn-lg mb-3"
                     onclick="if (!(confirm('Are you sure you want to save changes for this Recipe?'))) return false">Save</button>
             <hr>
-            <a th:href="@{/api/recipelist}">Back to Recipe List</a>
+            <button onclick="history.back()">Back</button>
         </form>
     </div>
 </body>
