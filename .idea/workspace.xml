@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c200b0a-6a10-494a-a144-03f51d64697f" name="Changes" comment="RecipeImpl tests; HTML Refactor; SpringSecurity: Custom login/logout;">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/ingredient/ingredient-form-save.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/recipe/recipe-form-save.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +110,7 @@
       <recent name="com.reanima.business.service" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RecipeMapperTest">
+  <component name="RunManager" selected="Application.RecipeApp">
     <configuration name="RecipeApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.reanima.RecipeApp" />
       <module name="RecipeApp" />
@@ -237,10 +236,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.RecipeApp" />
         <item itemvalue="JUnit.RecipeMapperTest" />
         <item itemvalue="JUnit.RecipeMapperTest.entityToDto_receiveEntity_returnResponse" />
         <item itemvalue="JUnit.RecipeServiceImplTest.testFindAllRecipes" />
-        <item itemvalue="Application.RecipeApp" />
         <item itemvalue="JUnit.RecipeServiceImplTest" />
       </list>
     </recent_temporary>
@@ -464,7 +463,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676039392342</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="RecipeImpl tests; HTML Refactor; SpringSecurity: Custom login/logout;">
+      <created>1676039408300</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1676039408300</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
