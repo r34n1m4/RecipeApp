@@ -1,6 +1,6 @@
 body {
-        font-family: Comic Sans MS;
-        background-color: #D3D3D3;
+        font-family: "Trebuchet MS", Verdana, sans-serif;
+        background-color: #D3D3D3; //light grey
     }
     h2 {
         position: absolute;
@@ -13,7 +13,7 @@ body {
         text-align: left;
     }
     tr:first-child, td:first-child {
-        background: #394959; #CA793D
+        background: #3c4d5d; //dark blue-grey
         color: white;
     }
     tr, td {
@@ -23,7 +23,7 @@ body {
         padding: 10px;
     }
     td {
-        background: #808080; //#F0B990
+        background: #808080; //dark grey
     }
 
     .imgnavbar {
@@ -41,12 +41,12 @@ body {
         margin-left: 2%;
         padding: 0;
         list-style-type: none;
-        border: 2px solid #394959; #CA793D
+        border: 2px solid #3c4d5d; //dark blue-grey
         border-radius: 20px 5px;
         width: 550px;
         text-align: center;
         text-size-adjust: auto;
-        background-color: #808080; //#F0B990
+        background-color: #808080; //dark grey
         position: absolute;
         right: 10%;
         top: 9%;
@@ -64,11 +64,29 @@ body {
       }
       #navbar a:hover {
         border-radius: 20px 5px;
-        background-color: #394959; //#CA793D
+        background-color: #3c4d5d; //dark blue-grey
       }
-      #btn {
-        background-color: #808080; //#F0B990
+
+      .btn {
+          border: none;
+          color: black;
+          padding: 14px 28px;
+          font-size: 16px;
+          cursor: pointer;
       }
-      #btn-warning {
-        background-color: #394959 !important;
-      }
+        .success {background-color: #04AA6D;} /* Green */
+        .success:hover {background-color: #46a049;}
+
+        .info {background-color: #2196F3;} /* Blue */
+        .info:hover {background: #0b7dda;}
+
+        .warning {background-color: #ff9800;} /* Orange */
+        .warning:hover {background: #e68a00;}
+
+        .danger {background-color: #f44336;} /* Red */
+        .danger:hover {background: #da190b;}
+
+        .default {background-color: #3c4d5d; color: black;} /* customised button */
+        .default:hover {background: #32404e;}
+
+

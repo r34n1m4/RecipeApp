@@ -58,12 +58,12 @@
                 <td sec:authorize="hasAuthority('ADMIN')">
                     <form action="#" th:action="@{/api/user/updateuserform}" method="POST">
                         <input type="hidden" name="userId" th:value="${userDto.userId}">
-                        <button type="submit" class="btn btn-warning btn-sm mb-3">Update</button>
+                        <button type="submit" class="btn default btn-sm mb-3">Update</button>
                     </form>
                     <div sec:authorize="hasAuthority('ADMIN')">
                         <form action="#" th:action="@{/api/user/deleteuser}" method="POST">
                             <input type="hidden" name="userId" th:value="${userDto.userId}">
-                            <button type="submit" class="btn btn-danger btn-sm mb-3"
+                            <button type="submit" class="btn default btn-sm mb-3"
                                     onclick="if (!(confirm('Are you sure you want to delete this User?'))) return false">Delete</button>
                         </form>
                     </div>

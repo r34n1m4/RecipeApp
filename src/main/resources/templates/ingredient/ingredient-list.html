@@ -33,7 +33,7 @@
             </header>
         </div>
 
-        <hr size="3px" color="#394959">
+        <hr size="3px" color="#3c4d5d">
 
         <div class="container">
 
@@ -42,7 +42,7 @@
 
             <div sec:authorize="hasAnyAuthority('ADMIN','USER')">
                 <a th:href="@{/api/ingredient/saveingredient}"
-                class="btn btn-lg mb-3">
+                class="btn default btn-lg mb-3">
                 Add Ingredient
                 </a>
             </div>
@@ -80,12 +80,12 @@
                         <td sec:authorize="hasAnyAuthority('ADMIN','USER')">
                             <form action="#" th:action="@{/api/ingredient/updateingredientform}" method="POST">
                                 <input type="hidden" name="ingredientId" th:value="${ingredientDto.ingredientId}">
-                                <button type="submit" class="btn btn-warning btn-sm mb-3">Update</button>
+                                <button type="submit" class="btn default btn-sm mb-3">Update</button>
                             </form>
                             <div sec:authorize="hasAuthority('ADMIN')">
                                 <form action="#" th:action="@{/api/ingredient/deleteingredient}" method="POST">
                                     <input type="hidden" name="ingredientId" th:value="${ingredientDto.ingredientId}">
-                                    <button type="submit" class="btn btn-danger btn-sm mb-3"
+                                    <button type="submit" class="btn default btn-sm mb-3"
                                             onclick="if (!(confirm('Are you sure you want to delete this Ingredient?'))) return false">Delete</button>
                                 </form>
                             </div>

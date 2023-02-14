@@ -32,10 +32,11 @@
             <input type="text" th:field="*{userSurname}"
                    class="form-control mb-4 col-4"
                    placeholder="Surname" required>
-            <button type="submit" class="btn btn-lg mb-3"
+            <button type="submit" class="btn default btn-lg mb-3"
                     onclick="if (!(confirm('Are you sure you want to save changes for this User?'))) return false">Update</button>
             <hr>
-            <button onclick="history.back()">Back</button>
+            <button class="btn default btn-lg mb-3"
+                    onclick="history.back()">Back</button>
         </form>
     </div>
 </body>

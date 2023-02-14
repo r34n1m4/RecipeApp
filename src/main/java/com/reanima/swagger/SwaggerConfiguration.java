@@ -22,8 +22,8 @@ public class SwaggerConfiguration {
     public Docket swaggerConfig() {
          Docket docket = new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .paths(PathSelectors.ant("/api/*"))
-                .apis(RequestHandlerSelectors.basePackage("com.reanima.controller"))
+                .paths(PathSelectors.ant("/api/**"))
+                .apis(RequestHandlerSelectors.basePackage("com.reanima"))
                 .build()
                 .apiInfo(apiInfo());
         docket.useDefaultResponseMessages(false);
