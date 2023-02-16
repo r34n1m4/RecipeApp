@@ -11,50 +11,50 @@
 </head>
 <body>
     <div>
-<!--        <div class="container text-center">-->
-<!--            <h2>So sorry to inform you, but we faced an error:-->
-<!--                <br>-->
-<!--                <a th:text = "${message}"></a>-->
-<!--                <br>-->
-<!--                <button onclick="history.back()">Back</button>-->
-<!--            </h2>-->
-<!--        </div>-->
-<!-- FULL ERROR LOG -->
-        <div class="container left">
-            <h3>Thymeleaf Error Page</h3>
-            <table class="table table-bordered table-striped">
-                <tr>
-                    <td>Date</td>
-                    <td th:text="${timestamp}"></td>
-                </tr>
-                <tr>
-                    <td>Path</td>
-                    <td th:text="${path}"></td>
-                </tr>
-                <tr>
-                    <td>Error</td>
-                    <td th:text="${error}"></td>
-                </tr>
-                <tr>
-                    <td>Status</td>
-                    <td th:text="${status}"></td>
-                </tr>
-                <tr>
-                    <td>Message</td>
-                    <td th:text="${message}"></td>
-                </tr>
-                <tr>
-                    <td>Exception</td>
-                    <td th:text="${exception}"></td>
-                </tr>
-                <tr>
-                    <td>Trace</td>
-                    <td>
-                        <pre th:text="${trace}"></pre>
-                    </td>
-                </tr>
-            </table>
+        <div class="container text-center">
+            <h2>So sorry to inform you, but we faced an error:
+                <br>
+                <a th:text = "${message}"></a>
+                <br>
+                <button onclick="history.back()">Back</button>
+            </h2>
         </div>
+<!-- FULL ERROR LOG -->
+<!--        <div class="container left">-->
+<!--            <h3>Thymeleaf Error Page</h3>-->
+<!--            <table class="table table-bordered table-striped">-->
+<!--                <tr>-->
+<!--                    <td>Date</td>-->
+<!--                    <td th:text="${timestamp}"></td>-->
+<!--                </tr>-->
+<!--                <tr>-->
+<!--                    <td>Path</td>-->
+<!--                    <td th:text="${path}"></td>-->
+<!--                </tr>-->
+<!--                <tr>-->
+<!--                    <td>Error</td>-->
+<!--                    <td th:text="${error}"></td>-->
+<!--                </tr>-->
+<!--                <tr>-->
+<!--                    <td>Status</td>-->
+<!--                    <td th:text="${status}"></td>-->
+<!--                </tr>-->
+<!--                <tr>-->
+<!--                    <td>Message</td>-->
+<!--                    <td th:text="${message}"></td>-->
+<!--                </tr>-->
+<!--                <tr>-->
+<!--                    <td>Exception</td>-->
+<!--                    <td th:text="${exception}"></td>-->
+<!--                </tr>-->
+<!--                <tr>-->
+<!--                    <td>Trace</td>-->
+<!--                    <td>-->
+<!--                        <pre th:text="${trace}"></pre>-->
+<!--                    </td>-->
+<!--                </tr>-->
+<!--            </table>-->
+<!--        </div>-->
     </div>
 </body>
 </html>

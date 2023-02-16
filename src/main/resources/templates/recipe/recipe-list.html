@@ -20,7 +20,8 @@
                 <ul id="navbar">
                     <li><a th:href="@{/api/recipe/recipelist}">Recipes</a></li>
                     <li><a th:href="@{/api/ingredient/ingredientlist}">Ingredients</a></li>
-                    <li><a th:href="@{/api/user/home}">Account: <span sec:authentication="name">Email</span></a></li>
+                    <li><a th:href="@{/api/user/home}">Account: <span sec:authorize="hasAnyAuthority('ADMIN','USER')"
+                                                                      sec:authentication="name">Email</span></a></li>
                     <li>
                         <div sec:authorize="isAuthenticated()">
                             <a href="javascript: document.logoutForm.submit()">Sign out</a>

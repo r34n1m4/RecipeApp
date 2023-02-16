@@ -19,7 +19,7 @@
         </div>
         <div>
             <h3><a th:href="@{/api/user/userlist}" class="btn default btn-lg mb-3"
-                   sec:authorize="hasAnyAuthority('ADMIN')">List Users</a></h3>
+                   sec:authorize="hasAuthority('ADMIN')">List Users</a></h3>
             <h3><a th:href="@{/api/user/register}" class="btn default btn-lg mb-3">Register</a></h3>
             <h3><a th:href="@{/api/user/login}" class="btn default btn-lg mb-3">Login</a></h3>
             <br>

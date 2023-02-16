@@ -21,9 +21,9 @@
             <a onclick th:href="@{/api/user/home}"><img th:src="@{/logo_nobg.png}" class="imgnavbar" ></a>
             <h1 class="namenavbar"></h1>
             <ul id="navbar">
-                <li>Welcome <span sec:authentication="name">Email</span></li>
+                <a>Welcome <span sec:authentication="name">Email</span></a>
                 <br>
-                <li>Role: <span sec:authentication="principal.authorities">Roles</span></li>
+                <a>Role: <span sec:authentication="principal.authorities">Roles</span></a>
                 <li>
                     <div sec:authorize="isAuthenticated()">
                         <a href="javascript: document.logoutForm.submit()">Sign out</a>

@@ -16,12 +16,13 @@
                 <a onclick th:href="@{/api/user/home}"><img
                         th:src="@{/logo_nobg.png}"
                         class="imgnavbar"></a>
+                <br>
+                Login Form
             </h1>
         </div>
             <form th:action="@{/api/user/login}" method="POST"
                   style="max-width: 600px; margin: 0 auto;">
                 <fieldset>
-                    <legend>Login Form</legend>
                 <div th:if="${param.error}" class="alert alert-error">
                     Invalid user email or password.
                 </div>
