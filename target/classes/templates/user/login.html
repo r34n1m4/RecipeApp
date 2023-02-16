@@ -1,6 +1,5 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml"
-      xmlns:sec="http://www.w3.org/1999/xhtml">
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
@@ -11,26 +10,48 @@
     <link th:href = "@{/stylesheet.css}" rel="stylesheet">
 </head>
 <body>
-<div>
-    <form name="f" th:action="@{/api/user/login}" method="POST">
-        <fieldset>
-            <legend>Login Form</legend>
-            <div th:if="${param.error}" class="alert alert-error">
-                Invalid user email or password.
-            </div>
-            <div th:if="${param.logout}" class="alert alert-success">
-                You have been logged out.
-            </div>
-            <label for="userEmail">User Email</label>
-            <input type="text" id="userEmail" name="userEmail"/>
-            <br>
-            <label for="userPassword">User Password</label>
-            <input type="password" id="userPassword" name="userPassword"/>
-            <div class="form-actions">
-                <button type="submit" class="btn default btn-lg mb-3">Log in</button>
-            </div>
-        </fieldset>
-    </form>
-</div>
+    <div class="container text-center">
+        <div>
+            <h1>
+                <a onclick th:href="@{/api/user/home}"><img
+                        th:src="@{/logo_nobg.png}"
+                        class="imgnavbar" ></a>
+            </h1>
+        </div>
+            <form th:action="@{/api/user/login}" method="POST"
+                  style="max-width: 600px; margin: 0 auto;">
+                <fieldset>
+                    <legend>Login Form</legend>
+                <div th:if="${param.error}" class="alert alert-error">
+                    Invalid user email or password.
+                </div>
+                <div th:if="${param.logout}" class="alert alert-success">
+                    You have been logged out.
+                </div>
+                <div class="m-3">
+                    <div class="form-group row">
+                        <label for="userEmail"
+                               class="col-form-label col-4">User Email</label>
+                        <div class="col-8">
+                            <input type="text" id="userEmail" name="userEmail"/>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="userPassword"
+                               class="col-form-label col-4">User Password</label>
+                        <div class="col-8">
+                            <input type="password" id="userPassword" name="userPassword"/>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn default btn-lg mb-3">Log in</button>
+                    </div>
+                    <div>
+                        <a th:href="@{/api/user/home}">Back to Welcome Page</a>
+                    </div>
+                </div>
+                </fieldset>
+            </form>
+    </div>
 </body>
 </html>

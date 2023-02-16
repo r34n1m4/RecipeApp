@@ -39,7 +39,7 @@ public class RecipeController {
     })
     @ResponseStatus(OK)
     @RequestMapping(value = "/recipelist", method = RequestMethod.GET)
-    public ModelAndView getAllRecipes() {
+    public ModelAndView findAllRecipes() {
         ModelAndView modelAndView = new ModelAndView("recipe/recipe-list");
         modelAndView.addObject("recipeEntity", recipeServiceImpl.findAllRecipes());
         return modelAndView;

@@ -24,7 +24,7 @@
                     <li>
                         <div sec:authorize="isAuthenticated()">
                             <a href="javascript: document.logoutForm.submit()">Sign out</a>
-                            <form name="logoutForm" th:action="@{/api/user/logout}" method="post" th:hidden="true">
+                            <form name="logoutForm" th:action="@{/api/user/logout}" method="POST" th:hidden="true">
                                 <input hidden type="submit" value="Sign Out" />
                             </form>
                         </div>
