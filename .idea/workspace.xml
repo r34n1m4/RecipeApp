@@ -4,22 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c200b0a-6a10-494a-a144-03f51d64697f" name="Changes" comment="RecipeImpl tests; HTML Refactor; SpringSecurity: Custom login/logout;">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/business/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/business/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/controller/RecipeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/controller/RecipeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/recipe/recipe-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/recipe/recipe-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/login_old.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/registration-success.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/registration-success.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/reanima/controller/RecipeControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/reanima/controller/RecipeControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/reanima/business/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/reanima/business/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/reanima/controller/RecipeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/reanima/controller/RecipeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/user/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/user/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/user/registration-success.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/user/registration-success.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/user/user-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/user/user-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/reanima/controller/RecipeControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/reanima/controller/RecipeControllerTest.class" afterDir="false" />
-    </list>
+    <list default="true" id="2c200b0a-6a10-494a-a144-03f51d64697f" name="Changes" comment="CSS refactor(buttons custom style)" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -498,7 +483,28 @@
       <option name="project" value="LOCAL" />
       <updated>1676210120463</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="CSS refactor(buttons custom style)">
+      <created>1676532460650</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1676532460650</updated>
+    </task>
+    <task id="LOCAL-00035" summary="CSS refactor(buttons custom style)">
+      <created>1676532468252</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1676532468252</updated>
+    </task>
+    <task id="LOCAL-00036" summary="CSS refactor(buttons custom style)">
+      <created>1676532486235</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1676532486235</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -545,7 +551,8 @@
     <MESSAGE value="Code refactor" />
     <MESSAGE value="RecipeImpl tests" />
     <MESSAGE value="RecipeImpl tests; HTML Refactor; SpringSecurity: Custom login/logout;" />
-    <option name="LAST_COMMIT_MESSAGE" value="RecipeImpl tests; HTML Refactor; SpringSecurity: Custom login/logout;" />
+    <MESSAGE value="CSS refactor(buttons custom style)" />
+    <option name="LAST_COMMIT_MESSAGE" value="CSS refactor(buttons custom style)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
