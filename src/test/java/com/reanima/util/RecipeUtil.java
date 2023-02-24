@@ -3,15 +3,9 @@ package com.reanima.util;
 import com.reanima.business.model.RecipeDto;
 import com.reanima.business.repository.model.RecipeEntity;
 
-import java.time.LocalDateTime;
+import static com.reanima.util.CommonUtil.VALID_ID;
 
-public class Util {
-
-    public static final int VALID_ID = 1;
-
-    public static final int INVALID_ID = -1;
-
-    public static final LocalDateTime LOCAL_DATE_TIME = LocalDateTime.now();
+public class RecipeUtil {
 
     public static final String RECIPE_URL = "/api/recipe";
 

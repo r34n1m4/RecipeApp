@@ -11,7 +11,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -106,7 +106,7 @@ public class RecipeController {
     })
     @ResponseStatus(OK)
     @RequestMapping(value = "/updaterecipeform", method = RequestMethod.POST)
-    public String updateRecipeForm(@RequestParam("recipeId") int recipeId, Model model) {
+    public String updateRecipeForm(@RequestParam("recipeId") int recipeId, ModelMap model) {
         Optional<RecipeDto> recipeDto = recipeServiceImpl.findRecipeById(recipeId);
         model.addAttribute("recipeDto", recipeDto);
         return "recipe/recipe-form-update";

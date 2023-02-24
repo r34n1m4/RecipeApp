@@ -26,9 +26,11 @@ public class LogMessages {
 
     public static final String USER_WITH_ID_NOT_FOUND = "User with this ID not found.";
 
-    public static final String RECIPE_WITH_NAME_ALREADY_EXISTS = "Recipe with this name already exists.";
+    public static final String RECIPE_WITH_NAME_ALREADY_EXIST = "Recipe with this name already exist.";
 
-    public static final String INGREDIENT_WITH_NAME_ALREADY_EXISTS = "Ingredient with this name already exists.";
+    public static final String INGREDIENT_WITH_THIS_NAME_ALREADY_EXIST = "Ingredient with this name already exist.";
+
+    public static final String USER_WITH_THIS_EMAIL_ALREADY_EXIST = "User with this email already exist.";
 
     private LogMessages() {}
 }

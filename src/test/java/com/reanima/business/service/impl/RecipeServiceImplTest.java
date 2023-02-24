@@ -7,6 +7,7 @@ import com.reanima.business.repository.RecipeRepository;
 import com.reanima.business.repository.model.RecipeEntity;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -15,10 +16,12 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 import static com.reanima.business.util.LogMessages.RECIPE_WITH_ID_NOT_FOUND;
-import static com.reanima.util.Util.*;
+import static com.reanima.util.CommonUtil.*;
+import static com.reanima.util.RecipeUtil.*;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
@@ -64,6 +67,7 @@ public class RecipeServiceImplTest {
     }
 
     @Test
+    @DisplayName("Test: Save Recipe")
     void testSaveRecipe() {
         when(recipeRepository.save(recipeEntity)).thenReturn(recipeEntity);
         when(recipeMapper.entityToDto(recipeEntity)).thenReturn(recipeDto);
@@ -75,13 +79,15 @@ public class RecipeServiceImplTest {
     }
 
     @Test
-    void testSaveRecipe_WhenAlreadyExists() {
+    @DisplayName("Test: Save Recipe when already exist")
+    void testSaveRecipe_WhenAlreadyExist() {
         when(recipeService.RecipeNameMatch(recipeDto))
-                .thenThrow(new RecipeException("Recipe with this name already exists."));
+                .thenThrow(new RecipeException("Recipe with this name already exist."));
         Assertions.assertThrows(RecipeException.class, () -> recipeService.RecipeNameMatch(recipeDto));
     }
 
     @Test
+    @DisplayName("Test: Find all recipes")
     void testFindAllRecipes() {
         when(recipeRepository.findAll()).thenReturn(recipeEntityList);
         when(recipeMapper.entityToDto(recipeEntity)).thenReturn(recipeDto);
@@ -92,7 +98,8 @@ public class RecipeServiceImplTest {
     }
 
     @Test
-    void testFindRecipeBy_ValidId() throws Exception {
+    @DisplayName("Test: Find Recipe by valid ID")
+    void testFindRecipeBy_ValidId() throws NoSuchElementException {
         when(recipeRepository.findById(VALID_ID)).thenReturn(Optional.of(recipeEntity));
         when(recipeMapper.entityToDto(recipeEntity)).thenReturn(recipeDto);
         Optional<RecipeDto> returnedRecipe = recipeService.findRecipeById(recipeDto.getRecipeId());
@@ -106,6 +113,7 @@ public class RecipeServiceImplTest {
     }
 
     @Test
+    @DisplayName("Test: Find Recipe by invalid ID")
     void testFindRecipeBy_InvalidId() {
         when(recipeRepository.findById(INVALID_ID)).thenReturn(Optional.empty());
         assertFalse(recipeService.findRecipeById(INVALID_ID).isPresent());
@@ -113,12 +121,14 @@ public class RecipeServiceImplTest {
     }
 
     @Test
+    @DisplayName("Test: Delete Recipe by valid ID")
     void testDeleteRecipeBy_ValidId() {
         recipeService.deleteRecipeById(recipeDto.getRecipeId());
         verify(recipeRepository, times(1)).deleteById(recipeDto.getRecipeId());
     }
 
     @Test
+    @DisplayName("Test: Delete Recipe by invalid ID")
     void testDeleteRecipeBy_InvalidId() {
         lenient().doThrow(new RecipeException(RECIPE_WITH_ID_NOT_FOUND))
                 .when(recipeRepository).deleteById(INVALID_ID);
@@ -127,6 +137,7 @@ public class RecipeServiceImplTest {
     }
 
     @Test
+    @DisplayName("Test: Update Recipe")
     void testUpdateRecipe() {
         when(recipeRepository.save(recipeEntity)).thenReturn(recipeEntity);
         when(recipeMapper.entityToDto(recipeEntity)).thenReturn(recipeDto);
@@ -138,12 +149,14 @@ public class RecipeServiceImplTest {
     }
 
     @Test
+    @DisplayName("Test: Recipe name match when found")
     void testRecipeNameMatch_Found() {
         when(recipeRepository.findAll()).thenReturn(recipeEntityList);
         assertTrue(recipeService.RecipeNameMatch(recipeDto));
     }
 
     @Test
+    @DisplayName("Test: Recipe name match when not found")
     void testRecipeNameMatch_NotFound() {
         recipeDto.setRecipeName("Random Name");
         when(recipeRepository.findAll()).thenReturn(recipeEntityList);

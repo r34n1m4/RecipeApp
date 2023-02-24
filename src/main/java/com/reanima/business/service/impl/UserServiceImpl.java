@@ -1,21 +1,23 @@
 package com.reanima.business.service.impl;
 
-import com.reanima.business.handler.exception.EmailExistsException;
+import com.reanima.business.handler.exception.UserException;
 import com.reanima.business.mapper.UserMapper;
 import com.reanima.business.model.UserDto;
 import com.reanima.business.repository.UserRepository;
 import com.reanima.business.repository.model.UserEntity;
 import com.reanima.business.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-@Service
-public class UserServiceImpl implements UserService {
+import static com.reanima.business.util.LogMessages.USER_WITH_THIS_EMAIL_ALREADY_EXIST;
 
+@Component
+public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserRepository userRepository;
@@ -37,17 +39,12 @@ public class UserServiceImpl implements UserService {
         return userEntity.map(userMapper::entityToDto);
     }
 
-    public void saveUser(UserDto userDto) {
-        UserEntity userEntity;
-        userEntity = userRepository.findUserByEmail(userDto.getUserEmail());
-        if (userEntity != null) {
-            throw new EmailExistsException("There is account already registered with email: "
-                    + userDto.getUserEmail() + "\nPlease chose another email.");
-        } else {
-            userEntity = userRepository.save(userMapper.dtoToEntity(userDto));
-            userEntity.setEnabled(true);
+    public UserDto saveUser(UserDto userDto) throws UserException {
+        if (UserEmailMatch(userDto)) {
+            throw new UserException(USER_WITH_THIS_EMAIL_ALREADY_EXIST);
         }
-        userMapper.entityToDto(userEntity);
+        UserEntity userEntity = userRepository.save(userMapper.dtoToEntity(userDto));
+        return userMapper.entityToDto(userEntity);
     }
 
     @Override
@@ -59,6 +56,13 @@ public class UserServiceImpl implements UserService {
     @Override
     public void deleteUserById(int userId) {
         userRepository.deleteById(userId);
+    }
+
+    public boolean UserEmailMatch(UserDto userDto) {
+        return userRepository.findAll().stream()
+                .anyMatch(e -> e.getUserEmail()
+                .equalsIgnoreCase(userDto
+                        .getUserEmail()));
     }
 }
 

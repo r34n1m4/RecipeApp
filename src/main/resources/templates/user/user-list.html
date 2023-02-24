@@ -1,4 +1,3 @@
-<!-- This pattern planned to be used as an administration tool during upcoming development iterations.-->
 <!DOCTYPE HTML>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.w3.org/1999/xhtml"
@@ -13,7 +12,7 @@
           href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
           integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
           crossorigin="anonymous"/>
-    <link th:href="@{/stylesheet.css}" rel="stylesheet">
+    <link th:href = "@{/stylesheet.css}" rel="stylesheet">
 </head>
 <body>
     <div>
@@ -35,8 +34,10 @@
             </ul>
         </header>
     </div>
-    <br>
-    <div>
+
+    <hr size="3px" color="#3c4d5d">
+
+    <div сlass="container">
         <table class="table table-bordered table-striped">
             <thead>
             <tr>
@@ -49,26 +50,26 @@
             </tr>
             </thead>
             <tbody>
-            <tr th:each="userDto : ${userList}">
-                <td th:text="${userDto.userId}"></td>
-                <td th:text="${userDto.userEmail}"></td>
-                <td th:text="${userDto.userName}"></td>
-                <td th:text="${userDto.userSurname}"></td>
-<!--                <td th:text="${userDto.userRole}"></td>-->
-                <td sec:authorize="hasAuthority('ADMIN')">
-                    <form action="#" th:action="@{/api/user/updateuserform}" method="POST">
-                        <input type="hidden" name="userId" th:value="${userDto.userId}">
-                        <button type="submit" class="btn default btn-sm mb-3">Update</button>
-                    </form>
-                    <div sec:authorize="hasAuthority('ADMIN')">
-                        <form action="#" th:action="@{/api/user/deleteuser}" method="POST">
+                <tr th:each="userDto : ${userList}">
+                    <td th:text="${userDto.userId}"></td>
+                    <td th:text="${userDto.userEmail}"></td>
+                    <td th:text="${userDto.userName}"></td>
+                    <td th:text="${userDto.userSurname}"></td>
+    <!--                <td th:text="${userDto.userRole}"></td>-->
+                    <td sec:authorize="hasAuthority('ADMIN')">
+                        <form action="#" th:action="@{/api/user/updateuserform}" method="POST">
                             <input type="hidden" name="userId" th:value="${userDto.userId}">
-                            <button type="submit" class="btn default btn-sm mb-3"
-                                    onclick="if (!(confirm('Are you sure you want to delete this User?'))) return false">Delete</button>
+                            <button type="submit" class="btn default btn-sm mb-3">Update</button>
                         </form>
-                    </div>
-                </td>
-            </tr>
+                        <div sec:authorize="hasAuthority('ADMIN')">
+                            <form action="#" th:action="@{/api/user/deleteuser}" method="POST">
+                                <input type="hidden" name="userId" th:value="${userDto.userId}">
+                                <button type="submit" class="btn default btn-sm mb-3"
+                                        onclick="if (!(confirm('Are you sure you want to delete this User?'))) return false">Delete</button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>

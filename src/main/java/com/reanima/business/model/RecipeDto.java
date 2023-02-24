@@ -1,6 +1,7 @@
 package com.reanima.business.model;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.NumberFormat;
@@ -19,6 +20,7 @@ import static com.reanima.business.util.LogMessages.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Validated
+@Builder
 public class RecipeDto {
 
     @NumberFormat

@@ -7,15 +7,16 @@ import com.reanima.business.repository.RecipeRepository;
 import com.reanima.business.repository.model.RecipeEntity;
 import com.reanima.business.service.RecipeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-import static com.reanima.business.util.LogMessages.RECIPE_WITH_NAME_ALREADY_EXISTS;
+import static com.reanima.business.util.LogMessages.RECIPE_WITH_NAME_ALREADY_EXIST;
 
-@Service
+@Component
 public class RecipeServiceImpl implements RecipeService {
 
     @Autowired
@@ -40,7 +41,7 @@ public class RecipeServiceImpl implements RecipeService {
     @Override
     public RecipeDto saveRecipe(RecipeDto recipeDto) throws RecipeException{
         if (RecipeNameMatch(recipeDto)) {
-            throw new RecipeException(RECIPE_WITH_NAME_ALREADY_EXISTS);
+            throw new RecipeException(RECIPE_WITH_NAME_ALREADY_EXIST);
         }
         RecipeEntity recipeEntity = recipeRepository.save(recipeMapper.dtoToEntity(recipeDto));
         return recipeMapper.entityToDto(recipeEntity);

@@ -35,7 +35,6 @@ public class UserDto {
     @NotNull(message = FIELD_NOT_NULL)
     @NotEmpty(message = FIELD_NOT_EMPTY)
     private String userPassword;
-    private String matchingPassword;
 
     @NotNull(message = FIELD_NOT_NULL)
     @NotEmpty(message = FIELD_NOT_EMPTY)

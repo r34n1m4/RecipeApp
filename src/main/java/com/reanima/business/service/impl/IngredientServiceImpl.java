@@ -7,15 +7,15 @@ import com.reanima.business.repository.IngredientRepository;
 import com.reanima.business.repository.model.IngredientEntity;
 import com.reanima.business.service.IngredientService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-import static com.reanima.business.util.LogMessages.INGREDIENT_WITH_NAME_ALREADY_EXISTS;
+import static com.reanima.business.util.LogMessages.INGREDIENT_WITH_THIS_NAME_ALREADY_EXIST;
 
-@Service
+@Component
 public class IngredientServiceImpl implements IngredientService {
 
     @Autowired
@@ -23,7 +23,6 @@ public class IngredientServiceImpl implements IngredientService {
 
     @Autowired
     private IngredientMapper ingredientMapper;
-
 
     @Override
     public List<IngredientDto> findAllIngredients() {
@@ -38,12 +37,13 @@ public class IngredientServiceImpl implements IngredientService {
     }
 
     @Override
-    public void saveIngredient(IngredientDto ingredientDto) throws IngredientException {
+    public IngredientDto saveIngredient(IngredientDto ingredientDto) throws IngredientException {
         if (IngredientNameMatch(ingredientDto)) {
-            throw new IngredientException(INGREDIENT_WITH_NAME_ALREADY_EXISTS);
+            throw new IngredientException(INGREDIENT_WITH_THIS_NAME_ALREADY_EXIST);
         }
         IngredientEntity ingredientEntity = ingredientRepository.save(ingredientMapper.dtoToEntity(ingredientDto));
         ingredientMapper.entityToDto(ingredientEntity);
+        return ingredientDto;
     }
 
     @Override

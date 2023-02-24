@@ -4,18 +4,62 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2c200b0a-6a10-494a-a144-03f51d64697f" name="Changes" comment="CSS refactor(buttons custom style)">
+    <list default="true" id="2c200b0a-6a10-494a-a144-03f51d64697f" name="Changes" comment="Error message refactor; UserRole in forms;">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/business/handler/exception/EmailExistsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/business/handler/exception/UserException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/business/model/RecipeDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/business/model/RecipeDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/business/model/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/business/model/UserDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/business/repository/CuisineRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/business/repository/CuisineRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/business/repository/DishRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/business/repository/DishRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/business/repository/UserFeedbackRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/business/repository/UserFeedbackRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/business/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/business/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/business/service/IngredientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/business/service/IngredientService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/business/service/RecipeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/business/service/RecipeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/business/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/business/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/business/service/impl/CustomUserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/business/service/impl/CustomUserDetailsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/business/service/impl/IngredientServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/business/service/impl/IngredientServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/business/service/impl/RecipeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/business/service/impl/RecipeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/business/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/business/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/business/util/LogMessages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/business/util/LogMessages.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reanima/controller/RecipeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/reanima/controller/RecipeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/stylesheet.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/error.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/ingredient/ingredient-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/ingredient/ingredient-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/recipe/recipe-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/recipe/recipe-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/registration-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/registration-form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/user-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/user-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/user/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/user/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/user/login_old.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/reanima/controller/RecipeControllerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestForTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/reanima/business/mapper/RecipeMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/reanima/business/mapper/RecipeMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/reanima/business/service/impl/RecipeServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/reanima/business/service/impl/RecipeServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/reanima/controller/RecipeControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/reanima/util/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/reanima/util/RecipeUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/reanima/business/handler/exception/EmailExistsException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/reanima/business/model/RecipeDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/reanima/business/model/RecipeDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/reanima/business/model/UserDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/reanima/business/model/UserDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/reanima/business/repository/CuisineRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/reanima/business/repository/CuisineRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/reanima/business/repository/DishRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/reanima/business/repository/DishRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/reanima/business/repository/UserFeedbackRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/reanima/business/repository/UserFeedbackRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/reanima/business/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/reanima/business/repository/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/reanima/business/service/IngredientService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/reanima/business/service/IngredientService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/reanima/business/service/RecipeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/reanima/business/service/RecipeService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/reanima/business/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/reanima/business/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/reanima/business/service/impl/CustomUserDetailsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/reanima/business/service/impl/CustomUserDetailsServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/reanima/business/service/impl/IngredientServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/reanima/business/service/impl/IngredientServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/reanima/business/service/impl/RecipeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/reanima/business/service/impl/RecipeServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/reanima/business/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/reanima/business/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/reanima/business/util/LogMessages.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/reanima/business/util/LogMessages.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/reanima/controller/IngredientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/reanima/controller/IngredientController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/reanima/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/reanima/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/reanima/controller/RecipeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/reanima/controller/RecipeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/stylesheet.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/error.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/error.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/user/user-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/user/user-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/reanima/business/mapper/IngredientMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/reanima/business/mapper/IngredientMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/reanima/business/mapper/RecipeMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/reanima/business/mapper/RecipeMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/reanima/business/mapper/RoleMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/reanima/business/mapper/RoleMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/com/reanima/business/mapper/UserMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/com/reanima/business/mapper/UserMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/TestForTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/reanima/business/mapper/RecipeMapperTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/reanima/business/mapper/RecipeMapperTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/reanima/business/service/impl/RecipeServiceImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/reanima/business/service/impl/RecipeServiceImplTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/reanima/util/Util.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,9 +70,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="HTML File" />
         <option value="Class" />
         <option value="JUnit5 Test Class" />
-        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -105,18 +149,22 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveMembersDialog.RECENTS_KEY">
+      <recent name="com.reanima.util.CommonUtil" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.reanima.business.repository" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
-      <recent name="com.reanima.controller" />
+      <recent name="com.reanima.business.repository.model" />
       <recent name="com.reanima.business.service.impl" />
+      <recent name="com.reanima.controller" />
       <recent name="com.reanima.business.mapper" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.reanima.business.mapper" />
       <recent name="com.reanima.business.handler.exception" />
       <recent name="com.reanima.business.model" />
-      <recent name="com.reanima.business.mapper" />
       <recent name="com.reanima.business.service" />
     </key>
   </component>
@@ -134,64 +182,64 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RecipeControllerTest.findAllRecipes_HttpRequest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RecipeEntityTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RecipeApp" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.reanima.controller.*" />
+          <option name="PATTERN" value="com.reanima.business.repository.model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.reanima.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.reanima.controller.RecipeControllerTest" />
-      <option name="METHOD_NAME" value="findAllRecipes_HttpRequest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RecipeMapperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RecipeApp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.reanima.business.mapper.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.reanima.business.mapper" />
-      <option name="MAIN_CLASS_NAME" value="com.reanima.business.mapper.RecipeMapperTest" />
+      <option name="PACKAGE_NAME" value="com.reanima.business.repository.model" />
+      <option name="MAIN_CLASS_NAME" value="com.reanima.business.repository.model.RecipeEntityTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RecipeMapperTest.entityToDto_receiveEntity_returnResponse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RecipeEntityTest.testAllArgsConstructor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RecipeApp" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.reanima.business.mapper.*" />
+          <option name="PATTERN" value="com.reanima.business.repository.model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.reanima.business.mapper" />
-      <option name="MAIN_CLASS_NAME" value="com.reanima.business.mapper.RecipeMapperTest" />
-      <option name="METHOD_NAME" value="entityToDto_receiveEntity_returnResponse" />
+      <option name="PACKAGE_NAME" value="com.reanima.business.repository.model" />
+      <option name="MAIN_CLASS_NAME" value="com.reanima.business.repository.model.RecipeEntityTest" />
+      <option name="METHOD_NAME" value="testAllArgsConstructor" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RecipeServiceImplTest.testFindAllRecipes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RecipeEntityTest.testBuilder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RecipeApp" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.reanima.business.service.impl.*" />
+          <option name="PATTERN" value="com.reanima.business.repository.model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.reanima.business.service.impl" />
-      <option name="MAIN_CLASS_NAME" value="com.reanima.business.service.impl.RecipeServiceImplTest" />
-      <option name="METHOD_NAME" value="testFindAllRecipes" />
+      <option name="PACKAGE_NAME" value="com.reanima.business.repository.model" />
+      <option name="MAIN_CLASS_NAME" value="com.reanima.business.repository.model.RecipeEntityTest" />
+      <option name="METHOD_NAME" value="testBuilder" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RecipeEntityTest.testToString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RecipeApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.reanima.business.repository.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.reanima.business.repository.model" />
+      <option name="MAIN_CLASS_NAME" value="com.reanima.business.repository.model.RecipeEntityTest" />
+      <option name="METHOD_NAME" value="testToString" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -238,20 +286,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.RecipeApp" />
       <item itemvalue="Azure Web App.Azure Web App: RecipeApp:RecipeApp" />
-      <item itemvalue="JUnit.RecipeServiceImplTest.testFindAllRecipes" />
-      <item itemvalue="JUnit.RecipeMapperTest.entityToDto_receiveEntity_returnResponse" />
-      <item itemvalue="JUnit.RecipeMapperTest" />
-      <item itemvalue="JUnit.RecipeControllerTest.findAllRecipes_HttpRequest" />
+      <item itemvalue="JUnit.RecipeEntityTest" />
+      <item itemvalue="JUnit.RecipeEntityTest.testToString" />
+      <item itemvalue="JUnit.RecipeEntityTest.testAllArgsConstructor" />
+      <item itemvalue="JUnit.RecipeEntityTest.testBuilder" />
+      <item itemvalue="Application.RecipeApp" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.RecipeApp" />
-        <item itemvalue="JUnit.RecipeControllerTest.findAllRecipes_HttpRequest" />
-        <item itemvalue="JUnit.RecipeMapperTest" />
-        <item itemvalue="JUnit.RecipeMapperTest.entityToDto_receiveEntity_returnResponse" />
-        <item itemvalue="JUnit.RecipeServiceImplTest.testFindAllRecipes" />
+        <item itemvalue="JUnit.RecipeEntityTest" />
+        <item itemvalue="JUnit.RecipeEntityTest.testBuilder" />
+        <item itemvalue="JUnit.RecipeEntityTest.testAllArgsConstructor" />
+        <item itemvalue="JUnit.RecipeEntityTest.testToString" />
       </list>
     </recent_temporary>
   </component>
@@ -523,7 +571,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676532792659</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Error message refactor; UserRole in forms;">
+      <created>1676535614269</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1676535614269</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -571,7 +626,8 @@
     <MESSAGE value="RecipeImpl tests" />
     <MESSAGE value="RecipeImpl tests; HTML Refactor; SpringSecurity: Custom login/logout;" />
     <MESSAGE value="CSS refactor(buttons custom style)" />
-    <option name="LAST_COMMIT_MESSAGE" value="CSS refactor(buttons custom style)" />
+    <MESSAGE value="Error message refactor; UserRole in forms;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Error message refactor; UserRole in forms;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -592,25 +648,46 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/RecipeApp$RecipeServiceImplTest_testRecipeNameMatch_NotFound.ic" NAME="RecipeServiceImplTest.testRecipeNameMatch_NotFound Coverage Results" MODIFIED="1676021857672" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.reanima.business.service.impl.*</FILTER>
-    </SUITE>
     <SUITE FILE_PATH="coverage/RecipeApp$RecipeServiceImplTest_testDeleteRecipeByValidId.ic" NAME="RecipeServiceImplTest.testDeleteRecipeByValidId Coverage Results" MODIFIED="1675427524853" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.reanima.business.service.impl.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/RecipeApp$RecipeServiceImplTest.ic" NAME="RecipeServiceImplTest Coverage Results" MODIFIED="1676021877756" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/RecipeApp$RecipeServiceImplTest.ic" NAME="RecipeServiceImplTest Coverage Results" MODIFIED="1676555680726" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.reanima.business.service.impl.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/RecipeApp$RecipeApp.ic" NAME="RecipeApp Coverage Results" MODIFIED="1677232555586" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.reanima.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/RecipeApp$IngredientMapperTest.ic" NAME="IngredientMapperTest Coverage Results" MODIFIED="1677232632843" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.reanima.business.mapper.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/RecipeApp$com_reanima_controller_in_RecipeApp.ic" NAME="com.reanima.controller in RecipeApp Coverage Results" MODIFIED="1677232709616" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.reanima.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/RecipeApp$com_reanima_business_service_impl_in_RecipeApp.ic" NAME="com.reanima.business.service.impl in RecipeApp Coverage Results" MODIFIED="1677232701652" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.reanima.business.service.impl.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/RecipeApp$CustomUserDetailsServiceImplTest.ic" NAME="CustomUserDetailsServiceImplTest Coverage Results" MODIFIED="1677232664311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.reanima.business.service.impl.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/RecipeApp$IngredientServiceImplTest.ic" NAME="IngredientServiceImplTest Coverage Results" MODIFIED="1676555668556" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.reanima.business.service.impl.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/RecipeApp$RecipeMapperTest.ic" NAME="RecipeMapperTest Coverage Results" MODIFIED="1677232672907" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.reanima.business.mapper.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/RecipeApp$RecipeServiceImplTest_testRecipeNameMatch_NotFound.ic" NAME="RecipeServiceImplTest.testRecipeNameMatch_NotFound Coverage Results" MODIFIED="1676021857672" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.reanima.business.service.impl.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/RecipeApp$RecipeServiceImplTest_testFindRecipeByValidId.ic" NAME="RecipeServiceImplTest.testFindRecipeByValidId Coverage Results" MODIFIED="1675332596869" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.reanima.business.service.impl.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/RecipeApp$RecipeApp.ic" NAME="RecipeApp Coverage Results" MODIFIED="1676021746676" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.reanima.*</FILTER>
-    </SUITE>
     <SUITE FILE_PATH="coverage/RecipeApp$RecipeServiceImplTest_testFindRecipeByInvalidId.ic" NAME="RecipeServiceImplTest.testFindRecipeByInvalidId Coverage Results" MODIFIED="1675280547924" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.reanima.business.service.impl.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/RecipeApp$RecipeMapperTest.ic" NAME="RecipeMapperTest Coverage Results" MODIFIED="1676038916282" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/RecipeApp$RecipeEntityTest.ic" NAME="RecipeEntityTest Coverage Results" MODIFIED="1677234682567" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.reanima.business.repository.model.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/RecipeApp$UserMapperTest.ic" NAME="UserMapperTest Coverage Results" MODIFIED="1677232687168" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.reanima.business.mapper.*</FILTER>
     </SUITE>
   </component>
