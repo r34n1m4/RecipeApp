@@ -11,7 +11,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -40,7 +40,7 @@ public class IngredientController {
     })
     @ResponseStatus(OK)
     @GetMapping("/ingredientlist")
-    public ModelAndView getAllIngredients() {
+    public ModelAndView findAllIngredients() {
         ModelAndView modelAndView = new ModelAndView("ingredient/ingredient-list");
         modelAndView.addObject("ingredientEntity", ingredientsServiceImpl.findAllIngredients());
         return modelAndView;
@@ -107,7 +107,7 @@ public class IngredientController {
     })
     @ResponseStatus(OK)
     @RequestMapping(value = "/updateingredientform", method = RequestMethod.POST)
-    public String updateIngredientForm(@RequestParam("ingredientId") int ingredientId, Model model) {
+    public String updateIngredientForm(@RequestParam("ingredientId") int ingredientId, ModelMap model) {
         Optional<IngredientDto> ingredientDto = ingredientsServiceImpl.findIngredientById(ingredientId);
         model.addAttribute("ingredientDto", ingredientDto);
         return "ingredient/ingredient-form-update";

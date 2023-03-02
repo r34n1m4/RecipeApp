@@ -2,7 +2,6 @@ package com.reanima.business.util;
 
 public class LogMessages {
 
-    //field validation
     public static final String FIELD_NOT_EMPTY = "This field should not be empty.";
 
     public static final String FIELD_NOT_NULL = "This field should not be null.";
@@ -13,7 +12,6 @@ public class LogMessages {
 
     public static final String FIELD_MAX_LENGTH_100 = "This field should not exceed 100 characters.";
 
-    //exception messages customization
     public static final String ID_NOT_FOUND = "ID not found.";
 
     public static final String ID_FOUND = "ID found";

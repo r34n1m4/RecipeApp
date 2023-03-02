@@ -1,6 +1,5 @@
 package com.reanima.swagger;
 
-
 import springfox.documentation.service.Contact;
 
 public class SwaggerTags {

@@ -9,9 +9,8 @@ import java.util.List;
 @Repository
 public interface RecipeRepository
         extends JpaRepository<RecipeEntity, Integer> {
-    //ascending search by recipe name
+
     List<RecipeEntity> findAllByOrderByRecipeNameAsc();
 
-    //descending search by recipe name
     List<RecipeEntity> findAllByOrderByRecipeNameDesc();
 }

@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Builder
-public class Cuisine {
+public class CuisineEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

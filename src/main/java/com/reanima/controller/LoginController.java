@@ -1,6 +1,5 @@
 package com.reanima.controller;
 
-import com.reanima.business.model.RecipeDto;
 import com.reanima.business.model.UserDto;
 import com.reanima.business.service.impl.UserServiceImpl;
 import io.swagger.annotations.Api;
@@ -18,11 +17,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
-
 import java.util.Optional;
 
 import static com.reanima.swagger.ApiResponseMessages.*;
-import static com.reanima.swagger.ApiResponseMessages.OK_MESSAGE;
 import static com.reanima.swagger.SwaggerTags.LOGIN_CONTROLLER_TAG_NAME;
 import static org.springframework.http.HttpStatus.OK;
 

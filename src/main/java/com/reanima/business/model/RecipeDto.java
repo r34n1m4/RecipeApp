@@ -8,10 +8,8 @@ import org.springframework.format.annotation.NumberFormat;
 import org.springframework.validation.annotation.Validated;
 
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-
 import java.time.LocalDateTime;
 
 import static com.reanima.business.util.LogMessages.*;

@@ -5,7 +5,6 @@ import com.reanima.business.model.UserDto;
 import com.reanima.business.repository.model.RoleEntity;
 import com.reanima.business.repository.model.UserEntity;
 
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -22,6 +21,8 @@ public class UserUtil {
     public static final String USER_NAME = "name";
 
     public static final String USER_SURNAME = "surname";
+
+    public static final String USER_ROLE = "USER_ROLE";
 
     public static final boolean USER_IS_ENABLED = true;
 

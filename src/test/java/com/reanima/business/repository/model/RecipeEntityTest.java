@@ -1,7 +1,7 @@
 package com.reanima.business.repository.model;
 
-
 import java.time.LocalDateTime;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -10,25 +10,33 @@ import static com.reanima.util.RecipeUtil.*;
 
 class RecipeEntityTest {
 
+    private RecipeEntity recipeEntity;
+    private LocalDateTime localDateTime;
+
+    @BeforeEach
+    public void setUp() {
+        recipeEntity = new RecipeEntity();
+        localDateTime = LocalDateTime.now();
+    }
+
     @Test
     void testGettersAndSetters() {
-        RecipeEntity recipe = new RecipeEntity();
-        recipe.setRecipeId(VALID_ID);
-        recipe.setRecipeName(RECIPE_NAME);
-        recipe.setRecipeDescription(RECIPE_DESCRIPTION);
-        recipe.setRecipePreparation(RECIPE_PREPARATION);
-        recipe.setCuisineType(CUISINE_TYPE);
-        recipe.setDishType(DISH_TYPE);
-        LocalDateTime now = LocalDateTime.now();
-        recipe.setRecipeCreated(now);
 
-        assertEquals(VALID_ID, recipe.getRecipeId());
-        assertEquals(RECIPE_NAME, recipe.getRecipeName());
-        assertEquals(RECIPE_DESCRIPTION, recipe.getRecipeDescription());
-        assertEquals(RECIPE_PREPARATION, recipe.getRecipePreparation());
-        assertEquals(CUISINE_TYPE, recipe.getCuisineType());
-        assertEquals(DISH_TYPE, recipe.getDishType());
-        assertEquals(now, recipe.getRecipeCreated());
+        recipeEntity.setRecipeId(VALID_ID);
+        recipeEntity.setRecipeName(RECIPE_NAME);
+        recipeEntity.setRecipeDescription(RECIPE_DESCRIPTION);
+        recipeEntity.setRecipePreparation(RECIPE_PREPARATION);
+        recipeEntity.setCuisineType(CUISINE_TYPE);
+        recipeEntity.setDishType(DISH_TYPE);
+        recipeEntity.setRecipeCreated(localDateTime);
+
+        assertEquals(VALID_ID, recipeEntity.getRecipeId());
+        assertEquals(RECIPE_NAME, recipeEntity.getRecipeName());
+        assertEquals(RECIPE_DESCRIPTION, recipeEntity.getRecipeDescription());
+        assertEquals(RECIPE_PREPARATION, recipeEntity.getRecipePreparation());
+        assertEquals(CUISINE_TYPE, recipeEntity.getCuisineType());
+        assertEquals(DISH_TYPE, recipeEntity.getDishType());
+        assertEquals(localDateTime, recipeEntity.getRecipeCreated());
     }
 
     @Test
@@ -48,15 +56,13 @@ class RecipeEntityTest {
 
     @Test
     void testToString() {
-        RecipeEntity recipe = new RecipeEntity();
-        recipe.setRecipeId(VALID_ID);
-        recipe.setRecipeName(RECIPE_NAME);
-        recipe.setRecipeDescription(RECIPE_DESCRIPTION);
-        recipe.setRecipePreparation(RECIPE_PREPARATION);
-        recipe.setCuisineType(CUISINE_TYPE);
-        recipe.setDishType(DISH_TYPE);
-        LocalDateTime now = LocalDateTime.now();
-        recipe.setRecipeCreated(now);
+        recipeEntity.setRecipeId(VALID_ID);
+        recipeEntity.setRecipeName(RECIPE_NAME);
+        recipeEntity.setRecipeDescription(RECIPE_DESCRIPTION);
+        recipeEntity.setRecipePreparation(RECIPE_PREPARATION);
+        recipeEntity.setCuisineType(CUISINE_TYPE);
+        recipeEntity.setDishType(DISH_TYPE);
+        recipeEntity.setRecipeCreated(localDateTime);
 
         String expected = "RecipeEntity(recipeId=1," +
                 " recipeName=Chicken curry," +
@@ -65,58 +71,55 @@ class RecipeEntityTest {
                 " cuisineType=Any type," +
                 " dishType=Any dish," +
                 " recipeCreated=" +
-                now + ")";
-        assertEquals(expected, recipe.toString());
+                localDateTime + ")";
+        assertEquals(expected, recipeEntity.toString());
     }
 
     @Test
     void testAllArgsConstructor() {
-        int recipeId = VALID_ID;
-        String recipeName = RECIPE_NAME;
-        String recipeDescription = RECIPE_DESCRIPTION;
-        String recipePreparation = RECIPE_PREPARATION;
-        String cuisineType = CUISINE_TYPE;
-        String dishType = DISH_TYPE;
-        LocalDateTime now = LocalDateTime.now();
 
-        RecipeEntity recipe = new RecipeEntity(
-                recipeId,
-                recipeName,
-                recipeDescription,
-                recipePreparation,
-                cuisineType,
-                dishType,
-                now);
+        recipeEntity = new RecipeEntity(
+                VALID_ID,
+                RECIPE_NAME,
+                RECIPE_DESCRIPTION,
+                RECIPE_PREPARATION,
+                CUISINE_TYPE,
+                DISH_TYPE,
+                localDateTime);
 
-        assertEquals(recipeId, recipe.getRecipeId());
-        assertEquals(recipeName, recipe.getRecipeName());
-        assertEquals(recipeDescription, recipe.getRecipeDescription());
-        assertEquals(recipePreparation, recipe.getRecipePreparation());
-        assertEquals(cuisineType, recipe.getCuisineType());
-        assertEquals(dishType, recipe.getDishType());
-        assertEquals(now, recipe.getRecipeCreated());
+        assertEquals(VALID_ID, recipeEntity.getRecipeId());
+        assertEquals(RECIPE_NAME, recipeEntity.getRecipeName());
+        assertEquals(RECIPE_DESCRIPTION, recipeEntity.getRecipeDescription());
+        assertEquals(RECIPE_PREPARATION, recipeEntity.getRecipePreparation());
+        assertEquals(CUISINE_TYPE, recipeEntity.getCuisineType());
+        assertEquals(DISH_TYPE, recipeEntity.getDishType());
+        assertEquals(localDateTime, recipeEntity.getRecipeCreated());
+    }
+
+    @Test
+    void testNoArgsConstructor() {
+        assertNotNull(recipeEntity);
     }
 
     @Test
     void testBuilder() {
-        LocalDateTime now = LocalDateTime.now();
-        RecipeEntity recipe = RecipeEntity.builder()
+        recipeEntity = RecipeEntity.builder()
                 .recipeId(VALID_ID)
                 .recipeName(RECIPE_NAME)
                 .recipeDescription(RECIPE_DESCRIPTION)
                 .recipePreparation(RECIPE_PREPARATION)
                 .cuisineType(CUISINE_TYPE)
                 .dishType(DISH_TYPE)
-                .recipeCreated(now)
+                .recipeCreated(localDateTime)
                 .build();
 
-        assertEquals(VALID_ID, recipe.getRecipeId());
-        assertEquals(RECIPE_NAME, recipe.getRecipeName());
-        assertEquals(RECIPE_DESCRIPTION, recipe.getRecipeDescription());
-        assertEquals(RECIPE_PREPARATION, recipe.getRecipePreparation());
-        assertEquals(CUISINE_TYPE, recipe.getCuisineType());
-        assertEquals(DISH_TYPE, recipe.getDishType());
-        assertEquals(now, recipe.getRecipeCreated());
+        assertEquals(VALID_ID, recipeEntity.getRecipeId());
+        assertEquals(RECIPE_NAME, recipeEntity.getRecipeName());
+        assertEquals(RECIPE_DESCRIPTION, recipeEntity.getRecipeDescription());
+        assertEquals(RECIPE_PREPARATION, recipeEntity.getRecipePreparation());
+        assertEquals(CUISINE_TYPE, recipeEntity.getCuisineType());
+        assertEquals(DISH_TYPE, recipeEntity.getDishType());
+        assertEquals(localDateTime, recipeEntity.getRecipeCreated());
     }
 
 }
