@@ -13,4 +13,6 @@ public interface RecipeRepository
     List<RecipeEntity> findAllByOrderByRecipeNameAsc();
 
     List<RecipeEntity> findAllByOrderByRecipeNameDesc();
+
+    List<RecipeEntity> findByRecipeName(String recipeName);
 }

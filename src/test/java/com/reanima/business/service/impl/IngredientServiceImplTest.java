@@ -5,6 +5,7 @@ import com.reanima.business.mapper.IngredientMapper;
 import com.reanima.business.model.IngredientDto;
 import com.reanima.business.repository.IngredientRepository;
 import com.reanima.business.repository.model.IngredientEntity;
+import com.reanima.business.repository.model.RecipesIngredientsEntity;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -14,10 +15,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.Optional;
+import java.util.*;
 
 import static com.reanima.business.util.LogMessages.INGREDIENT_WITH_ID_NOT_FOUND;
 import static com.reanima.util.CommonUtil.*;
@@ -39,6 +37,8 @@ class IngredientServiceImplTest {
     private IngredientEntity ingredientEntity;
     private IngredientDto ingredientDto;
     private List<IngredientEntity> ingredientEntityList;
+
+    private Set<RecipesIngredientsEntity> recipesIngredients = new HashSet<>();
 
     @BeforeEach
     void setUp() {
@@ -68,7 +68,8 @@ class IngredientServiceImplTest {
                 PROTEIN,
                 WATER,
                 CHOLESTEROL,
-                LOCAL_DATE_TIME
+                LOCAL_DATE_TIME,
+                recipesIngredients
         );
 
         ingredientEntityList = new ArrayList<>(List.of(ingredientEntity));

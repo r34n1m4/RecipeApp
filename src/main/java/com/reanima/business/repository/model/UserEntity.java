@@ -17,7 +17,6 @@ import java.util.Set;
 @Getter
 @Setter
 @Builder
-
 public class UserEntity {
 
     @Id
@@ -50,7 +49,8 @@ public class UserEntity {
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "users_roles",
-    joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+    joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id"))
 
     private Set<RoleEntity> roles = new HashSet<>();
 

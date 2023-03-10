@@ -2,6 +2,8 @@ package com.reanima.business.repository.model;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
@@ -10,6 +12,7 @@ import static com.reanima.util.CommonUtil.VALID_ID;
 import static com.reanima.util.UserUtil.*;
 import static org.junit.jupiter.api.Assertions.*;
 
+@SpringBootTest
 public class UserEntityTest {
 
     private UserEntity userEntity;

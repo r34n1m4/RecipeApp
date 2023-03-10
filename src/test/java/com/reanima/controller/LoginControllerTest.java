@@ -3,6 +3,7 @@ package com.reanima.controller;
 import com.reanima.business.model.UserDto;
 import com.reanima.business.service.impl.UserServiceImpl;
 import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -19,6 +20,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
+import static com.reanima.util.CommonUtil.VALID_ID;
 import static com.reanima.util.UserUtil.USER_PASSWORD;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -35,6 +37,13 @@ public class LoginControllerTest {
 
     @InjectMocks
     private LoginController loginController;
+
+    private UserDto userDto = new UserDto();
+
+    @BeforeEach
+    public void setUp() {
+        userDto = new UserDto();
+    }
 
     @Test
     public void testHome() {
@@ -76,47 +85,44 @@ public class LoginControllerTest {
 
     @Test
     public void testRegisterUser() {
-        UserDto user = new UserDto();
-        user.setUserPassword(USER_PASSWORD);
+
+        userDto.setUserPassword(USER_PASSWORD);
         String encodedPassword = passwordEncoder.encode(USER_PASSWORD);
 
-        when(passwordEncoder.encode(USER_PASSWORD)).thenReturn(encodedPassword);
-        when(userServiceImpl.saveUser(user)).thenReturn(user);
+        lenient().when(passwordEncoder.encode(USER_PASSWORD)).thenReturn(encodedPassword);
+        when(userServiceImpl.saveUser(userDto)).thenReturn(userDto);
         String expected = "user/registration-success";
-        String actual = loginController.registerUser(user);
+        String actual = loginController.registerUser(userDto);
         assertEquals(expected, actual);
-        verify(userServiceImpl, times(1)).saveUser(user);
+        verify(userServiceImpl, times(1)).saveUser(userDto);
         verify(passwordEncoder, times(1)).encode(USER_PASSWORD);
     }
 
 
-
     @Test
     public void testUpdateUser() {
-        UserDto user = new UserDto();
 
         ModelAndView modelAndView = new ModelAndView("user/registration-form");
-        modelAndView.addObject("users_registration", user);
+        modelAndView.addObject("users_registration", userDto);
 
         ResponseEntity<Void> expected = ResponseEntity.status(302)
                 .header("Location", "/api/user/userlist")
                 .build();
 
-        ResponseEntity<Void> actual = loginController.updateUser(user);
+        ResponseEntity<Void> actual = loginController.updateUser(userDto);
 
         assertEquals(expected.getStatusCodeValue(), actual.getStatusCodeValue());
         assertEquals(expected.getHeaders().getLocation(), actual.getHeaders().getLocation());
-        verify(userServiceImpl, times(1)).updateUser(user);
+        verify(userServiceImpl, times(1)).updateUser(userDto);
     }
 
     @Test
     public void updateUserForm_shouldReturnUserFormUpdateView() {
-        int userId = 1;
         Model model = new ExtendedModelMap();
         Optional<UserDto> userDto = Optional.of(new UserDto());
-        when(userServiceImpl.findUserById(userId)).thenReturn(userDto);
+        when(userServiceImpl.findUserById(VALID_ID)).thenReturn(userDto);
 
-        String result = loginController.updateUserForm(userId, model);
+        String result = loginController.updateUserForm(VALID_ID, model);
 
         assertEquals("user/user-form-update", result);
         assertTrue(model.containsAttribute("userDto"));
@@ -136,15 +142,14 @@ public class LoginControllerTest {
 
     @Test
     public void deleteUser_shouldDeleteUserAndRedirectToUserList() {
-        int userId = 1;
         ResponseEntity<Void> expected = ResponseEntity
                 .status(HttpStatus.FOUND)
                 .header(HttpHeaders.LOCATION, "/api/user/userlist")
                 .build();
 
-        ResponseEntity<Void> result = loginController.deleteUser(userId);
+        ResponseEntity<Void> result = loginController.deleteUser(VALID_ID);
 
-        verify(userServiceImpl, times(1)).deleteUserById(userId);
+        verify(userServiceImpl, times(1)).deleteUserById(VALID_ID);
         assertEquals(expected.getStatusCode(), result.getStatusCode());
         assertEquals(expected.getHeaders(), result.getHeaders());
     }

@@ -1,11 +1,14 @@
 package com.reanima.business.repository.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "ingredient")
@@ -63,4 +66,8 @@ public class IngredientEntity {
     @Column(name = "ingr_created")
     @ApiModelProperty(notes = "Ingredient timestamp of creation")
     private LocalDateTime ingredientCreated;
+
+    @OneToMany(mappedBy = "ingredientEntity", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
+    private Set<RecipesIngredientsEntity> recipesIngredients = new HashSet<>();
 }

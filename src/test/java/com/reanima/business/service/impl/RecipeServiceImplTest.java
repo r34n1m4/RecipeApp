@@ -5,6 +5,7 @@ import com.reanima.business.mapper.RecipeMapper;
 import com.reanima.business.model.RecipeDto;
 import com.reanima.business.repository.RecipeRepository;
 import com.reanima.business.repository.model.RecipeEntity;
+import com.reanima.business.repository.model.RecipesIngredientsEntity;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -14,10 +15,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.Optional;
+import java.util.*;
 
 import static com.reanima.business.util.LogMessages.RECIPE_WITH_ID_NOT_FOUND;
 import static com.reanima.util.CommonUtil.*;
@@ -39,6 +37,7 @@ public class RecipeServiceImplTest {
     private RecipeEntity recipeEntity;
     private RecipeDto recipeDto;
     private List<RecipeEntity> recipeEntityList;
+    private Set<RecipesIngredientsEntity> recipeIngredients;
 
     @BeforeEach
     public void setUp() {
@@ -60,10 +59,12 @@ public class RecipeServiceImplTest {
                 RECIPE_PREPARATION,
                 CUISINE_TYPE,
                 DISH_TYPE,
-                LOCAL_DATE_TIME
+                LOCAL_DATE_TIME,
+                recipeIngredients
         );
 
         recipeEntityList = new ArrayList<>(List.of(recipeEntity));
+        recipeIngredients = new HashSet<>();
     }
 
     @Test

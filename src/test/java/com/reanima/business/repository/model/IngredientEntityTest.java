@@ -5,21 +5,28 @@ import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.mockito.junit.MockitoJUnitRunner;
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
+import static com.reanima.util.CommonUtil.QUANTITY;
 import static com.reanima.util.CommonUtil.VALID_ID;
 import static com.reanima.util.IngredientUtil.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 @RunWith(MockitoJUnitRunner.class)
 class IngredientEntityTest {
-    
+
     private IngredientEntity ingredientEntity;
     private LocalDateTime localDateTime;
-    
+    private RecipesIngredientsEntity recipesIngredientsEntity;
+    private Set<RecipesIngredientsEntity> recipesIngredientsEntitySet;
+
     @BeforeEach
     public void setUp() {
         ingredientEntity = new IngredientEntity();
         localDateTime = LocalDateTime.now();
+        recipesIngredientsEntity = new RecipesIngredientsEntity();
+        recipesIngredientsEntitySet = new HashSet<>();
     }
 
     @Test
@@ -91,13 +98,23 @@ class IngredientEntityTest {
                 " water=0.5," +
                 " cholesterol=0.5," +
                 " ingredientCreated=" +
-                localDateTime + ")";
+                localDateTime +
+                ", recipesIngredients=[])";
 
         assertEquals(expected, ingredientEntity.toString());
     }
 
     @Test
     void testAllArgsConstructor() {
+
+        ingredientEntity.setIngredientId(VALID_ID);
+        ingredientEntity.setIngredientName(INGREDIENT_NAME);
+
+        recipesIngredientsEntity.setRecipeEntity(new RecipeEntity());
+        recipesIngredientsEntity.setIngredientEntity(ingredientEntity);
+        recipesIngredientsEntity.setQuantity(QUANTITY);
+
+        recipesIngredientsEntitySet.add(recipesIngredientsEntity);
 
         ingredientEntity = new IngredientEntity(
                 VALID_ID,
@@ -110,7 +127,8 @@ class IngredientEntityTest {
                 PROTEIN,
                 WATER,
                 CHOLESTEROL,
-                localDateTime
+                localDateTime,
+                recipesIngredientsEntitySet
         );
 
         assertEquals(VALID_ID, ingredientEntity.getIngredientId());

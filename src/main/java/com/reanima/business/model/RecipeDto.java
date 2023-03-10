@@ -11,6 +11,8 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 import static com.reanima.business.util.LogMessages.*;
 
@@ -43,5 +45,7 @@ public class RecipeDto {
 
     @NotNull(message = FIELD_NOT_NULL)
     private LocalDateTime recipeCreated;
+
+//    private Set<RecipesIngredientsDto> recipeIngredients = new HashSet<>();
 
 }
